@@ -62,17 +62,68 @@
 
 
 
-// FUNCTION DECLARATION 
+// // FUNCTION DECLARATION 
 
-function calcAge1(birthYear) {
-    return 2035 - birthYear;
-}
-const age1 = calcAge1(1995);
-console.log(age1);
+// function calcAge1(birthYear) {
+//     return 2035 - birthYear;
+// }
+// const age1 = calcAge1(1995);
+// console.log(age1);
 
-// FUNCTION EXPRESSION
-const calcAge2 = function (birthYear) {
-    return 2035 - birthYear;
-}
-const age2 = calcAge2(1990)
-console.log(age1, age2)
+// // FUNCTION EXPRESSION
+// const calcAge2 = function (birthYear) {
+//     return 2035 - birthYear;
+// }
+// const age2 = calcAge2(1990)
+// console.log(age1, age2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ARROW FUNCTION
+// const yearOfBirth = birthYear => 2022 - birthYear;
+// const currentAge = yearOfBirth(1995);
+// console.log(currentAge);
+
+
+// const yearUntilRetirement = (birthYear, firstName) => {
+//     const currentAge = 2022 - birthYear;
+//     const retirementAge = 65 - currentAge;
+//     // return retirement;
+//     return `${firstName} retires in ${retirementAge} years`;
+// }
+
+// console.log(yearUntilRetirement(1995, 'Alex')); 
+// console.log(yearUntilRetirement(1984, 'Bob')); 
+
+// // Arrow functions cannot use 'this.'
