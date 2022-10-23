@@ -90,8 +90,6 @@
 
 
 
-//
-
 
 
 
@@ -127,3 +125,30 @@
 // console.log(yearUntilRetirement(1984, 'Bob')); 
 
 // // Arrow functions cannot use 'this.'
+
+
+
+
+
+
+
+
+
+// FUNCTIONS CALLING OTHER FUNCTIONS 
+
+function cutFruitPieces(fruit) {
+    return fruit * 12 ;
+}
+
+function fruitProcessor(apples, oranges, pineapples) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    const pineapplePieces = cutFruitPieces(pineapples)
+
+    console.log(apples, oranges, pineapples);
+    const juice = `Juice with ${applePieces} pieces of apples, ${orangePieces} pieces of oranges, and ${pineapplePieces} pieces of pineapples`;
+    return juice
+}
+console.log(fruitProcessor(5, 4, 2));
+
+//DON'T REPEAT YOURSELF
