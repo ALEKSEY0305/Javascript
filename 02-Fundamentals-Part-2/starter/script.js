@@ -41,11 +41,38 @@
 // console.log(appleOrangeJuice)
 
 
-function love(Chippie, Gugu, hehehe) {
-    const loveIs = `Sweet life is when ${Chippie} loves ${Gugu}, and when ${Gugu} loves ${Chippie}!!!!${hehehe}!`;
-    return loveIs;
-} 
-const perfectLove = love('길가현', '알렉세이', 'You are mine')
-console.log(perfectLove);
+// function love(Chippie, Gugu, hehehe) {
+//     const loveIs = `Sweet life is when ${Chippie} loves ${Gugu}, and when ${Gugu} loves ${Chippie}!!!!${hehehe}!`;
+//     return loveIs;
+// } 
+// const perfectLove = love('길가현', '알렉세이', 'You are mine')
+// console.log(perfectLove);
 
 // MORE MAINTAINABLE CODE/ GOOD FOR CLEAN CODE // D R Y - don't repeat yourself
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTION DECLARATION 
+
+function calcAge1(birthYear) {
+    return 2035 - birthYear;
+}
+const age1 = calcAge1(1995);
+console.log(age1);
+
+// FUNCTION EXPRESSION
+const calcAge2 = function (birthYear) {
+    return 2035 - birthYear;
+}
+const age2 = calcAge2(1990)
+console.log(age1, age2)
