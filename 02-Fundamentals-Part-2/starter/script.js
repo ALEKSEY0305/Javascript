@@ -124,7 +124,7 @@
 // console.log(yearUntilRetirement(1995, 'Alex')); 
 // console.log(yearUntilRetirement(1984, 'Bob')); 
 
-// // Arrow functions cannot use 'this.'
+// Arrow functions cannot use 'this.'
 
 
 
@@ -136,19 +136,70 @@
 
 // FUNCTIONS CALLING OTHER FUNCTIONS 
 
-function cutFruitPieces(fruit) {
-    return fruit * 12 ;
-}
+// function cutFruitPieces(fruit) {
+//     return fruit * 12 ;
+// }
 
-function fruitProcessor(apples, oranges, pineapples) {
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
-    const pineapplePieces = cutFruitPieces(pineapples)
+// function fruitProcessor(apples, oranges, pineapples) {
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     const pineapplePieces = cutFruitPieces(pineapples)
 
-    console.log(apples, oranges, pineapples);
-    const juice = `Juice with ${applePieces} pieces of apples, ${orangePieces} pieces of oranges, and ${pineapplePieces} pieces of pineapples`;
-    return juice
-}
-console.log(fruitProcessor(5, 4, 2));
+//     console.log(apples, oranges, pineapples);
+//     const juice = `Juice with ${applePieces} pieces of apples, ${orangePieces} pieces of oranges, and ${pineapplePieces} pieces of pineapples`;
+//     return juice
+// }
+// console.log(fruitProcessor(5, 4, 2));
 
 //DON'T REPEAT YOURSELF
+
+
+
+
+
+
+
+
+
+
+
+
+//Reviewong Functions
+
+
+
+const calcAge = function(birthYear) {
+    return 2035 - birthYear;
+}
+
+const yearUntilRetirement = function (birthYear, firstName){
+    const currentAge = calcAge(birthYear);
+    const retirement = 65 - currentAge;
+    // return retirement;
+
+    if(retirement > 0){
+        console.log(`${firstName} retires in ${retirement} years`)
+        return retirement
+    } else{
+        console.log(`the ${firstName} has already retired`);
+        return -1;
+
+    }
+    // return `${firstName} retires in ${retirementAge} years`;
+}
+
+console.log(yearUntilRetirement(1995, 'Alex')); 
+console.log(yearUntilRetirement(1950, 'Bob')); 
+
+// Arrow functions cannot use 'this.'
+
+
+// const yearUntilRetirement = (birthYear, firstName) => {
+//     const currentAge = 2022 - birthYear;
+//     const retirementAge = 65 - currentAge;
+//     // return retirement;
+//     return `${firstName} retires in ${retirementAge} years`;
+// }
+
+// console.log(yearUntilRetirement(1995, 'Alex')); 
+// console.log(yearUntilRetirement(1984, 'Bob')); 
