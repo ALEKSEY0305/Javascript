@@ -296,40 +296,40 @@
 
 
 
-// Basic Array Operations (Methods)
+// // Basic Array Operations (Methods)
 
- const friends = ['Alex', 'Bob', 'Nick'];
+//  const friends = ['Alex', 'Bob', 'Nick'];
 
- //Add elements
- const newLenght = friends.push('Peter'); // add as the last
+//  //Add elements
+//  const newLenght = friends.push('Peter'); // add as the last
 
- console.log(friends);
- console.log(newLenght);
+//  console.log(friends);
+//  console.log(newLenght);
 
- friends.unshift('John') //add as the first
- console.log(friends)
-
-
- //Remove elements
-friends.pop(); //remove last
-const popped = friends.pop(); 
-console.log(friends)
-console.log(popped);
-
-friends.shift(); // REMOVE First
-console.log(friends)
-
-console.log(friends.indexOf('Bob')); //1
-console.log(friends.indexOf('Steven'));//-1
-
-friends.push('Steven');
-console.log(friends.includes('Bob'))
-console.log(friends.includes('Steven'))
-console.log(friends.includes(23))
+//  friends.unshift('John') //add as the first
+//  console.log(friends)
 
 
-if(friends.includes('Ruby')){
-    console.log('You have a friend named Bob')
-} else{
-    console.log("You don't have friends")
-}
+//  //Remove elements
+// friends.pop(); //remove last
+// const popped = friends.pop(); 
+// console.log(friends)
+// console.log(popped);
+
+// friends.shift(); // REMOVE First
+// console.log(friends)
+
+// console.log(friends.indexOf('Bob')); //1
+// console.log(friends.indexOf('Steven'));//-1
+
+// friends.push('Steven');
+// console.log(friends.includes('Bob'))
+// console.log(friends.includes('Steven'))
+// console.log(friends.includes(23))
+
+
+// if(friends.includes('Ruby')){
+//     console.log('You have a friend named Bob')
+// } else{
+//     console.log("You don't have friends")
+// }
