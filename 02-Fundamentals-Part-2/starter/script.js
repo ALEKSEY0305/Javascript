@@ -168,28 +168,28 @@
 
 
 
-const calcAge = function(birthYear) {
-    return 2035 - birthYear;
-}
+// const calcAge = function(birthYear) {
+//     return 2035 - birthYear;
+// }
 
-const yearUntilRetirement = function (birthYear, firstName){
-    const currentAge = calcAge(birthYear);
-    const retirement = 65 - currentAge;
-    // return retirement;
+// const yearUntilRetirement = function (birthYear, firstName){
+//     const currentAge = calcAge(birthYear);
+//     const retirement = 65 - currentAge;
+//     // return retirement;
 
-    if(retirement > 0){
-        console.log(`${firstName} retires in ${retirement} years`)
-        return retirement
-    } else{
-        console.log(`the ${firstName} has already retired`);
-        return -1;
+//     if(retirement > 0){
+//         console.log(`${firstName} retires in ${retirement} years`)
+//         return retirement
+//     } else{
+//         console.log(`the ${firstName} has already retired`);
+//         return -1;
 
-    }
-    // return `${firstName} retires in ${retirementAge} years`;
-}
+//     }
+//     // return `${firstName} retires in ${retirementAge} years`;
+// }
 
-console.log(yearUntilRetirement(1995, 'Alex')); 
-console.log(yearUntilRetirement(1950, 'Bob')); 
+// console.log(yearUntilRetirement(1995, 'Alex')); 
+// console.log(yearUntilRetirement(1950, 'Bob')); 
 
 // Arrow functions cannot use 'this.'
 
@@ -203,3 +203,5 @@ console.log(yearUntilRetirement(1950, 'Bob'));
 
 // console.log(yearUntilRetirement(1995, 'Alex')); 
 // console.log(yearUntilRetirement(1984, 'Bob')); 
+
+
