@@ -205,3 +205,65 @@
 // console.log(yearUntilRetirement(1984, 'Bob')); 
 
 
+
+const friend1 = 'Alex';
+const friend2 = 'Bob';
+const friend3 = 'Nick';
+
+
+const friends = ['Alex', 'Bob', 'Nick']     // usuas (LITERAL syntax)
+console.log(friends);
+
+// const years = new Array(1991, 1995, 2020, 2022);
+// console.log(years);
+
+console.log(friends[0])
+console.log(friends[2])
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+// cannot change the whole arrray
+
+
+friends[1] = 'Paul'
+console.log(friends)
+// cannot change multiple variables
+
+
+const firstName = 'Jonas'
+const alex = [firstName, 'Kim', 2022 - 1995, 'teacher', friends];
+console.log(alex);
+console.log(alex.length);
+
+// Exercise
+
+    const calcAge = function(years) {
+      return 2022 - years;
+    }  
+ const years = [1990, 1967, 2002, 2010, 2018];
+ const age1 = calcAge(years[0]);
+ console.log(age1);
+
+ const age2 = calcAge(years[1]);
+ console.log(age2);
+
+ const age3 = calcAge(years[2]);
+ console.log(age3);
+
+ const age4 = calcAge(years[3]);
+ console.log(age4);
+
+ const age5 = calcAge(years[4]);
+ console.log(age5);
+
+ console.log(age1, age2, age3, age4, age5);
+
+
+
+ const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2]), calcAge(years[3]), calcAge(years[4])]
+ calcAge(years[years.length - 1]);
+
+ console.log(ages);
