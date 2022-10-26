@@ -352,14 +352,14 @@
 
 // OBJECTS
 
-const alexArray = [
-    'Alex',
-    'Kim',
-    2022 - 1995,
-    'teacher',
-    ['Bob', 'Martin', 'Jack']
-];
-console.log(alexArray); 
+// const alexArray = [
+//     'Alex',
+//     'Kim',
+//     2022 - 1995,
+//     'teacher',
+//     ['Bob', 'Martin', 'Jack']
+// ];
+// console.log(alexArray); 
 
 const alex = {
     firstName: 'Alex',
@@ -370,6 +370,46 @@ const alex = {
 };
 
 console.log(alex);
+console.log(alex.lastName)
+console.log(alex['lastName'])
+
+// Dot . calls a property in a function
+
+//bracket notation can have anything in it
+
+const nameKey = 'Name';                // need to use pro[perty names
+console.log(alex['first' + nameKey]);
+console.log(alex['last' + nameKey]);
+
+// console.log(alex.'last' + nameKey);               -----> can't use it with dot
 
 
 // in Arrays order is important, in Function order is not important.
+
+
+const interestedIn = prompt('What do you want to know about Alex? Choose between firstName, lastName, age, job, and friends');           //pop-up window with input
+
+
+if(alex[interestedIn]) {
+    console.log(alex[interestedIn]); // undefined is for unexisted notations
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends')
+}
+
+alex.location = 'Busan, South Korea';
+alex.love = '길가현 공주님';
+alex['instagram'] = '@alex_kimr';
+console.log(alex);
+
+// const bestFriend = 'friends';
+// if(alex.friends){
+//     console.log('Alex has 3 friends and his best friends is ')
+//     console.log(alex.friends[0]);
+// }
+// console.log(bestFriend);
+
+console.log(`${alex.firstName} has ${alex.friends.length} friends, and his bes friend is ${alex.friends[0]}`)
+
+
+// 'Alex has 3 friends, and his best friend is Bob
+ 
