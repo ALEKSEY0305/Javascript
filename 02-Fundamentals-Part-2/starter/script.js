@@ -333,3 +333,43 @@
 // } else{
 //     console.log("You don't have friends")
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OBJECTS
+
+const alexArray = [
+    'Alex',
+    'Kim',
+    2022 - 1995,
+    'teacher',
+    ['Bob', 'Martin', 'Jack']
+];
+console.log(alexArray); 
+
+const alex = {
+    firstName: 'Alex',
+    lastName: 'Kim',
+    age: 2022 - 1995,
+    job: 'teacher',
+    friends: ['Bob', 'Martin', 'Jack']
+};
+
+console.log(alex);
+
+
+// in Arrays order is important, in Function order is not important.
