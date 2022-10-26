@@ -359,47 +359,47 @@
 //     'teacher',
 //     ['Bob', 'Martin', 'Jack']
 // ];
-// console.log(alexArray); 
+// // console.log(alexArray); 
 
-const alex = {
-    firstName: 'Alex',
-    lastName: 'Kim',
-    age: 2022 - 1995,
-    job: 'teacher',
-    friends: ['Bob', 'Martin', 'Jack']
-};
+// const alex = {
+//     firstName: 'Alex',
+//     lastName: 'Kim',
+//     age: 2022 - 1995,
+//     job: 'teacher',
+//     friends: ['Bob', 'Martin', 'Jack']
+// };
 
-console.log(alex);
-console.log(alex.lastName)
-console.log(alex['lastName'])
+// console.log(alex);
+// console.log(alex.lastName)
+// console.log(alex['lastName'])
 
-// Dot . calls a property in a function
+// // Dot . calls a property in a function
 
-//bracket notation can have anything in it
+// //bracket notation can have anything in it
 
-const nameKey = 'Name';                // need to use pro[perty names
-console.log(alex['first' + nameKey]);
-console.log(alex['last' + nameKey]);
+// const nameKey = 'Name';                // need to use pro[perty names
+// console.log(alex['first' + nameKey]);
+// console.log(alex['last' + nameKey]);
 
-// console.log(alex.'last' + nameKey);               -----> can't use it with dot
-
-
-// in Arrays order is important, in Function order is not important.
+// // console.log(alex.'last' + nameKey);               -----> can't use it with dot
 
 
-const interestedIn = prompt('What do you want to know about Alex? Choose between firstName, lastName, age, job, and friends');           //pop-up window with input
+// // in Arrays order is important, in Function order is not important.
 
 
-if(alex[interestedIn]) {
-    console.log(alex[interestedIn]); // undefined is for unexisted notations
-} else {
-    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends')
-}
+// const interestedIn = prompt('What do you want to know about Alex? Choose between firstName, lastName, age, job, and friends');           //pop-up window with input
 
-alex.location = 'Busan, South Korea';
-alex.love = '길가현 공주님';
-alex['instagram'] = '@alex_kimr';
-console.log(alex);
+
+// if(alex[interestedIn]) {
+//     console.log(alex[interestedIn]); // undefined is for unexisted notations
+// } else {
+//     console.log('Wrong request! Choose between firstName, lastName, age, job, and friends')
+// }
+
+// alex.location = 'Busan, South Korea';
+// alex.love = '길가현 공주님';
+// alex['instagram'] = '@alex_kimr';
+// console.log(alex);
 
 // const bestFriend = 'friends';
 // if(alex.friends){
@@ -408,8 +408,78 @@ console.log(alex);
 // }
 // console.log(bestFriend);
 
-console.log(`${alex.firstName} has ${alex.friends.length} friends, and his bes friend is ${alex.friends[0]}`)
+// console.log(`${alex.firstName} has ${alex.friends.length} friends, and his bes friend is ${alex.friends[0]}`)
 
 
-// 'Alex has 3 friends, and his best friend is Bob
+// // 'Alex has 3 friends, and his best friend is Bob
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Object methods
+
+
+
+const alex = {
+    firstName: 'Alex',
+    lastName: 'Kim',
+    birthYear: 1995,
+    job: 'teacher',
+    friends: ['Bob', 'Martin', 'Jack'],
+    hasDriversLicense: true, 
+
+    // calcAge: function(birthYear) {                   // PROPERTY = METHOD       ANY function in an object is a METHOD
+    //     return 2022 - birthYear;
+    // }
+
+
+    //  calcAge: function() {   
+    //     // console.log(this);      //this = Alex          // PROPERTY = METHOD       ANY function in an object is a METHOD
+    //     return 2022 - this.birthYear;
+    // }
+
+    calcAge: function() {   
+        this.age = 2022 - this.birthYear
+        return this.age;
+    },
+
+    getSummary: function(){
+      return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }
+};
+
+console.log(alex.calcAge());
+
+console.log(alex.age);
+console.log(alex.age);
+console.log(alex.age);
+
+console.log(alex.getSummary());
+ 
+// const calcAge = function(birthYear) {                     // FUNCTION
+//     return 2022 - birthYear;
+// }
+// console.log(alex.calcAge)
+
+// console.log(alex)
+
+
+
+//Challenge
+console.log(`${alex.firstName} is a ${alex.age}-year old ${alex.job}, and`)
+if(alex.hasDriversLicense){
+    console.log('he has a drivers licence')
+} else {
+    console.log('nope')
+}
