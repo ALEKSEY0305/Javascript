@@ -431,55 +431,55 @@
 
 
 
-const alex = {
-    firstName: 'Alex',
-    lastName: 'Kim',
-    birthYear: 1995,
-    job: 'teacher',
-    friends: ['Bob', 'Martin', 'Jack'],
-    hasDriversLicense: true, 
+// const alex = {
+//     firstName: 'Alex',
+//     lastName: 'Kim',
+//     birthYear: 1995,
+//     job: 'teacher',
+//     friends: ['Bob', 'Martin', 'Jack'],
+//     hasDriversLicense: true, 
 
-    // calcAge: function(birthYear) {                   // PROPERTY = METHOD       ANY function in an object is a METHOD
-    //     return 2022 - birthYear;
-    // }
+//     // calcAge: function(birthYear) {                   // PROPERTY = METHOD       ANY function in an object is a METHOD
+//     //     return 2022 - birthYear;
+//     // }
 
 
-    //  calcAge: function() {   
-    //     // console.log(this);      //this = Alex          // PROPERTY = METHOD       ANY function in an object is a METHOD
-    //     return 2022 - this.birthYear;
-    // }
+//     //  calcAge: function() {   
+//     //     // console.log(this);      //this = Alex          // PROPERTY = METHOD       ANY function in an object is a METHOD
+//     //     return 2022 - this.birthYear;
+//     // }
 
-    calcAge: function() {   
-        this.age = 2022 - this.birthYear
-        return this.age;
-    },
+//     calcAge: function() {   
+//         this.age = 2022 - this.birthYear
+//         return this.age;
+//     },
 
-    getSummary: function(){
-      return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
-    }
-};
+//     getSummary: function(){
+//       return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+//     }
+// };
 
-console.log(alex.calcAge());
+// console.log(alex.calcAge());
 
-console.log(alex.age);
-console.log(alex.age);
-console.log(alex.age);
+// console.log(alex.age);
+// console.log(alex.age);
+// console.log(alex.age);
 
-console.log(alex.getSummary());
+// console.log(alex.getSummary());
  
-// const calcAge = function(birthYear) {                     // FUNCTION
-//     return 2022 - birthYear;
+// // const calcAge = function(birthYear) {                     // FUNCTION
+// //     return 2022 - birthYear;
+// // }
+// // console.log(alex.calcAge)
+
+// // console.log(alex)
+
+
+
+// //Challenge
+// console.log(`${alex.firstName} is a ${alex.age}-year old ${alex.job}, and`)
+// if(alex.hasDriversLicense){
+//     console.log('he has a drivers licence')
+// } else {
+//     console.log('nope')
 // }
-// console.log(alex.calcAge)
-
-// console.log(alex)
-
-
-
-//Challenge
-console.log(`${alex.firstName} is a ${alex.age}-year old ${alex.job}, and`)
-if(alex.hasDriversLicense){
-    console.log('he has a drivers licence')
-} else {
-    console.log('nope')
-}
