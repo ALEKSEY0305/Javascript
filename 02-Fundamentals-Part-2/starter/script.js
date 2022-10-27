@@ -511,3 +511,88 @@
 // for (let rep = 1; rep <= 10; rep++) {
 // console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//      LOOPIMG ARRAYS
+const alex = [
+    'Alex',
+    'Kim',
+    2022 - 1995,
+    'teacher',
+    ['Bob', 'Martin', 'Jack'],
+    true,
+    false,
+    NaN,
+    undefined 
+
+];
+
+const types = [];
+
+
+for ( let i = 0; i < alex.length; i++) {
+
+    //Reading types of Array
+    console.log(alex[i], typeof alex[i]);
+
+        // FIlling the types of Array
+    // types[i] = typeof alex [i]; 
+    types.push(typeof alex[i]);
+}
+console.log(types)
+
+
+const years = [1991, 2007, 1969, 2020, 2021];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Continue and break
+console.log('--- ONLY STRINGS ---')
+for ( let i = 0; i < alex.length; i++) {
+    if(typeof alex[i] !== 'string') continue;
+
+    console.log(alex[i], typeof alex[i]);
+}
+
+
+console.log('--- BREAK WITH NUMBER ---')
+for ( let i = 0; i < alex.length; i++) {
+    if(typeof alex[i] === 'number') break;
+
+    console.log(alex[i], typeof alex[i]);
+}
+
+
