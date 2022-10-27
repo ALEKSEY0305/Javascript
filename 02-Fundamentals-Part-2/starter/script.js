@@ -653,26 +653,26 @@
                     // The while loop
 
 //  for loop keeps running while the condition is TRUE  rep = rep + 1 === rep++
-for (let rep = 1; rep <= 10; rep++) {
-    console.log(`LET: Lifting weights repetition ${rep} 🏋️‍♀️`);
-};
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`LET: Lifting weights repetition ${rep} 🏋️‍♀️`);
+// };
 
 
-let rep = 1;
-while (rep <= 10) {
-    console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
-    rep++;
-};
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+//     rep++;
+// };
 
-// while doesn't need a counter. it needs a condition
+// // while doesn't need a counter. it needs a condition
 
-//If for lopp happen to work, while lopp will implement an action while the for loop will work
+// //If for lopp happen to work, while lopp will implement an action while the for loop will work
 
 
-let dice = Math.trunc(Math.random() * 6) + 1;
+// let dice = Math.trunc(Math.random() * 6) + 1;
 
-while (dice !== 6) {
-    console.log(` You rolled a ${dice}`);
-    dice = Math.trunc(Math.random() * 6) + 1;
-    if(dice === 6) console.log(`It is 6 now`);
-}
+// while (dice !== 6) {
+//     console.log(` You rolled a ${dice}`);
+//     dice = Math.trunc(Math.random() * 6) + 1;
+//     if(dice === 6) console.log(`It is 6 now`);
+// }
