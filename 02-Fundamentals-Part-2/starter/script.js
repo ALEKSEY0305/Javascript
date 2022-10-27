@@ -483,3 +483,31 @@
 // } else {
 //     console.log('nope')
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//              LOOPS
+
+
+
+//  for loop keeps running while the condition is TRUE  rep = rep + 1 === rep++
+// for (let rep = 1; rep <= 10; rep++) {
+// console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+// };

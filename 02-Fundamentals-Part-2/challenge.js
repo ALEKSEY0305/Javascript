@@ -104,43 +104,43 @@
 
 // Challenge #3
 
-const mark = {
-    firstName: 'Mark',
-    lastName: 'Miller',
-    weight: 78,
-    height: 1.69,
+// const mark = {
+//     firstName: 'Mark',
+//     lastName: 'Miller',
+//     weight: 78,
+//     height: 1.69,
 
 
 
-    calcBMI: function(){
-        this.bmi = this.weight / this.height ** 2;
-        return this.bmi
-    }
+//     calcBMI: function(){
+//         this.bmi = this.weight / this.height ** 2;
+//         return this.bmi
+//     }
     
-}
-console.log(mark.calcBMI())
+// }
+// console.log(mark.calcBMI())
 
 
-const john = {
-    firstName: 'John',
-    lastName: 'Smith',
-    weight: 92,
-    height: 1.95,
+// const john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     weight: 92,
+//     height: 1.95,
 
     
-    calcBMI: function(){
-        this.bmi = this.weight / this.height ** 2;
-        return this.bmi
-    }
-}
-console.log(john.calcBMI())
+//     calcBMI: function(){
+//         this.bmi = this.weight / this.height ** 2;
+//         return this.bmi
+//     }
+// }
+// console.log(john.calcBMI())
 
 
-if(mark.bmi > john.bmi) {
-    console.log(`${mark.firstName}'s BMI (${mark.calcBMI()}) is higher than ${john.firstName}'s (${john.calcBMI()})`)    
-}   else{
-    console.log(`${john.firstName}'s BMI (${john.calcBMI()}) is higher than ${mark.firstName}'s (${mark.calcBMI()})`)    
-}
+// if(mark.bmi > john.bmi) {
+//     console.log(`${mark.firstName}'s BMI (${mark.calcBMI()}) is higher than ${john.firstName}'s (${john.calcBMI()})`)    
+// }   else{
+//     console.log(`${john.firstName}'s BMI (${john.calcBMI()}) is higher than ${mark.firstName}'s (${mark.calcBMI()})`)    
+// }
 
 
 
