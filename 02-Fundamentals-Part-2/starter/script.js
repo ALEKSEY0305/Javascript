@@ -528,7 +528,85 @@
 
 
 
-//      LOOPIMG ARRAYS
+// //      LOOPIMG ARRAYS
+// const alex = [
+//     'Alex',
+//     'Kim',
+//     2022 - 1995,
+//     'teacher',
+//     ['Bob', 'Martin', 'Jack'],
+//     true,
+//     false,
+//     NaN,
+//     undefined 
+
+// ];
+
+// const types = [];
+
+
+// for ( let i = 0; i < alex.length; i++) {
+
+//     //Reading types of Array
+//     console.log(alex[i], typeof alex[i]);
+
+//         // FIlling the types of Array
+//     // types[i] = typeof alex [i]; 
+//     types.push(typeof alex[i]);
+// }
+// console.log(types)
+
+
+// const years = [1991, 2007, 1969, 2020, 2021];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2037 - years[i]);
+// }
+
+// console.log(ages);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Continue and break
+// console.log('--- ONLY STRINGS ---')
+// for ( let i = 0; i < alex.length; i++) {
+//     if(typeof alex[i] !== 'string') continue;
+
+//     console.log(alex[i], typeof alex[i]);
+// }
+
+
+// console.log('--- BREAK WITH NUMBER ---')
+// for ( let i = 0; i < alex.length; i++) {
+//     if(typeof alex[i] === 'number') break;
+
+//     console.log(alex[i], typeof alex[i]);
+// }
+
+
+
+
+
+
+
+
+
+
+
+//      LOOPING BACKWARDS   LOOP in a LOOP
+
 const alex = [
     'Alex',
     'Kim',
@@ -538,61 +616,21 @@ const alex = [
     true,
     false,
     NaN,
-    undefined 
-
+    undefined
 ];
 
-const types = [];
-
-
-for ( let i = 0; i < alex.length; i++) {
-
-    //Reading types of Array
-    console.log(alex[i], typeof alex[i]);
-
-        // FIlling the types of Array
-    // types[i] = typeof alex [i]; 
-    types.push(typeof alex[i]);
-}
-console.log(types)
-
-
-const years = [1991, 2007, 1969, 2020, 2021];
-const ages = [];
-
-for (let i = 0; i < years.length; i++) {
-    ages.push(2037 - years[i]);
-}
-
-console.log(ages);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Continue and break
-console.log('--- ONLY STRINGS ---')
-for ( let i = 0; i < alex.length; i++) {
-    if(typeof alex[i] !== 'string') continue;
-
-    console.log(alex[i], typeof alex[i]);
+for( let i = alex.length - 1; i >= 0; i--){
+    console.log(i, alex[i]);
 }
 
 
-console.log('--- BREAK WITH NUMBER ---')
-for ( let i = 0; i < alex.length; i++) {
-    if(typeof alex[i] === 'number') break;
 
-    console.log(alex[i], typeof alex[i]);
+
+//  LOOP is a LOOP;
+
+for ( let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`------- Starting exercise ${exercise}`);
+
+    for ( let rep = 1; rep <= 5; rep++)
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`)
 }
-
-
