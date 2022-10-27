@@ -607,30 +607,72 @@
 
 //      LOOPING BACKWARDS   LOOP in a LOOP
 
-const alex = [
-    'Alex',
-    'Kim',
-    2022 - 1995,
-    'teacher',
-    ['Bob', 'Martin', 'Jack'],
-    true,
-    false,
-    NaN,
-    undefined
-];
+// const alex = [
+//     'Alex',
+//     'Kim',
+//     2022 - 1995,
+//     'teacher',
+//     ['Bob', 'Martin', 'Jack'],
+//     true,
+//     false,
+//     NaN,
+//     undefined
+// ];
 
-for( let i = alex.length - 1; i >= 0; i--){
-    console.log(i, alex[i]);
-}
-
-
+// for( let i = alex.length - 1; i >= 0; i--){
+//     console.log(i, alex[i]);
+// }
 
 
-//  LOOP is a LOOP;
 
-for ( let exercise = 1; exercise <= 3; exercise++) {
-    console.log(`------- Starting exercise ${exercise}`);
 
-    for ( let rep = 1; rep <= 5; rep++)
-    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`)
+// //  LOOP is a LOOP;
+
+// for ( let exercise = 1; exercise <= 3; exercise++) {
+//     console.log(`------- Starting exercise ${exercise}`);
+
+//     for ( let rep = 1; rep <= 5; rep++)
+//     console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    // The while loop
+
+//  for loop keeps running while the condition is TRUE  rep = rep + 1 === rep++
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`LET: Lifting weights repetition ${rep} 🏋️‍♀️`);
+};
+
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+    rep++;
+};
+
+// while doesn't need a counter. it needs a condition
+
+//If for lopp happen to work, while lopp will implement an action while the for loop will work
+
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(` You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) console.log(`It is 6 now`);
 }
