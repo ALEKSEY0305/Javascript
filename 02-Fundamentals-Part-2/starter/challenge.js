@@ -145,49 +145,138 @@
 
 
 
-const calcTip = function(bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
- }
+// const calcTip = function(bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+//  }
+
+// const bills = [
+//     22,
+//     295,
+//     176,
+//     440,
+//     37,
+//     105,
+//     10,
+//     1100,
+//     86,
+//     52
+// ];
+
+// const tips = [];
+// const totals = [];
+
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i])
+//     tips.push(tip);
+//     totals.push(tip + bills[i])
+// }
+// console.log(bills, tips, totals)
+
+// const calcAverage = function(arr) {
+//     let sum = 0;
+//     for( let i = 0; i < arr.length; i++) {
+//         sum = sum + arr[i];
+//         // sum += arr[i];
+//     }
+//     // console.log(sum)
+//     return sum / arr.length;
+
+// }
+// // console.log(calcAverage([2, 3, 6]));
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+// console.log(calcAverage(bills));
+
+
+
+
+
+//          REVIEW
+
+
+// const markWeight = 78;
+// const markHeight = 1.69;
+
+
+// const johnWeight = 92;
+// const johnHeight = 1.95;
+
+// const markBMI = Math.floor(markWeight / markHeight ** 2)
+
+
+// const johnBMI = Math.floor(johnWeight / johnHeight ** 2);
+
+
+// if(markBMI > johnBMI) {
+//     console.log(`Mark has higher BMI(${markBMI}) than John(${johnBMI})`)
+// } else {
+//     console.log(`John has higher BMI(${johnBMI} than Mark(${markBMI}))`)
+// };
+
+// let dolphins = [97, 162, 101]
+// const dolphinsAverage = Math.floor((dolphins[0] + dolphins[1] + dolphins[2]) / 3);
+
+
+// let koalas = [109, 95, 106]
+// const koalasAverage = Math.floor((koalas[0] + koalas[1] + koalas[2]) / 3);
+
+
+
+// if(dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
+//     console.log(`Dolphins won!(${dolphinsAverage}), Koalas lost(${koalasAverage})`)
+// } else if(koalasAverage > dolphinsAverage && koalasAverage >= 100) {
+//     console.log(`Koalas won!(${koalasAverage})`)
+// } else {
+//     console.log(`There is no winner this time`)
+// }
+
+
+
+// const bill = 275;
+// const tip = bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
+// console.log(`The tip is $${tip}`)
+// const totalBill = bill + tip
+// console.log(`The total bill is $${totalBill}`);
+
+
+
+
+// const calcAverage = (a, b, c) => (a + b + c) / 3
+
+// const dolphinsScore = calcAverage(44, 23, 71);
+// const koalasScore = calcAverage(620, 54, 49);
+// console.log(dolphinsScore, koalasScore)
+
+// const checkWinner = function (avgDolphins, avgKoalas) 
+// {
+//     if (avgDolphins >= 2 * avgKoalas) {
+//             console.log(`Dolphins won! (${avgDolphins} vs ${avgKoalas})`);
+//     } else if(avgKoalas >= 2 * avgDolphins) {
+//             console.log(`Koalas won! (${avgKoalas} vs ${avgDolphins})`);
+//     } else {
+//         console.log(`There's no winner`);
+// }
+// }
+// checkWinner(dolphinsScore, koalasScore);
+
+
+
+
+// const calcTip = function(bill) {
+//     return bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
+// }
+
+const calcTip = bill => bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
 
 const bills = [
-    22,
-    295,
-    176,
-    440,
-    37,
-    105,
-    10,
-    1100,
-    86,
-    52
-];
+    125,
+    222,
+    44,
+]
 
-const tips = [];
-const totals = [];
-
-for (let i = 0; i < bills.length; i++) {
-    const tip = calcTip(bills[i])
-    tips.push(tip);
-    totals.push(tip + bills[i])
-}
-console.log(bills, tips, totals)
-
-const calcAverage = function(arr) {
-    let sum = 0;
-    for( let i = 0; i < arr.length; i++) {
-        sum = sum + arr[i];
-        // sum += arr[i];
-    }
-    // console.log(sum)
-    return sum / arr.length;
-
-}
-// console.log(calcAverage([2, 3, 6]));
-console.log(calcAverage(totals));
-console.log(calcAverage(tips));
-console.log(calcAverage(bills));
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log(total);
 
 
-
-const x = '22';
-
+console.log(bills, tips)
