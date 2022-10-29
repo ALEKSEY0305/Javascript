@@ -266,17 +266,81 @@
 //     return bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
 // }
 
-const calcTip = bill => bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * .15 : bill * .2;
+
+// const bills = [
+//     125,
+//     222,
+//     44,
+//     100,
+// ]
+
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]), calcTip(bills[3])];
+// const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2], bills[3] + tips[3]]
+// console.log(total);
+
+
+// console.log(bills, tips)
 
 const bills = [
-    125,
-    222,
-    44,
+    22,
+    205,
+    176,
+    440,
+    37,
+    105,
+    10,
+    1100,
+    86,
+    52,
 ]
+const tips = [];
+const totals = [];
 
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
-console.log(total);
+for(let i = 0; i < bills.length; i++) {
+    tips.push(bills [i] > 50 && bills[i] < 300 ? bills[i] * .15 : bills[i] * .2)
+    totals.push(tips[i] + bills[i])
+}
+console.log(bills, tips, totals)
 
 
-console.log(bills, tips)
+const love = 'I LOVE YOU!';
+for (let i = 0; i < love.length; i++) {
+    console.log(love[i]);
+}
+
+const alex = [
+    'Alex',
+    'Kim',
+    2037 - 1995,
+    'teacher',
+    ['Tim', 'Peter', 'Nick'],
+    true,
+    false,
+];
+const types = [];
+
+for (let i = 0; i <= 6; i++) {
+    //REading from alex array
+    console.log(alex[i], typeof alex[i]);
+
+    types[i] = typeof alex[i];
+
+    //filling types array
+    //types[i] = typeof alex
+    types.push(typeof alex[i]);
+}
+console.log(types);
+
+const years = [
+    1991,
+    2007,
+    1969,
+    2020,
+]
+const ages = []
+
+for(let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages)
