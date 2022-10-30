@@ -1,20 +1,20 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-// const temperatures = [
-//     3,
-//     -2,
-//     -6,
-//     -1,
-//     'error',
-//     9,
-//     13,
-//     17,
-//     15,
-//     14,
-//     9,
-//     5,
-// ];
+const temperatures = [
+    3,
+    -2,
+    -6,
+    -1,
+    'error',
+    9,
+    13,
+    17,
+    15,
+    14,
+    9,
+    5,
+];
 
 
 
@@ -30,21 +30,21 @@
 // Find min value
 //Subtract min from max and return it
 
-// const calcTempAmplitude = function (temps) {
-//     let max = temps[0];
-//     let min = temps[0];
-//         for (let i = 0; i < temps.length; i++) {
-//         const curTemp = temps[i];
-//         if(typeof curTemp !== 'number') continue;
+const calcTempAmplitude = function (temps) {
+    let max = temps[0];
+    let min = temps[0];
+        for (let i = 0; i < temps.length; i++) {
+        const curTemp = temps[i];
+        if(typeof curTemp !== 'number') continue;
 
-//         if (curTemp > max) max = curTemp;
-//         if (curTemp < min) min = curTemp;
-//     }
-//     console.log(max, min);
-//     return max - min;
-// }
-// const amplitudde = calcTempAmplitude(temperatures)
-// console.log(amplitudde);
+        if (curTemp > max) max = curTemp;
+        if (curTemp < min) min = curTemp;
+    }
+    console.log(max, min);
+    return max - min;
+}
+const amplitudde = calcTempAmplitude(temperatures)
+console.log(amplitudde);
 
 // // Problem 2
 // //Function should recieve 2 arrays of temp
@@ -119,31 +119,31 @@
 // const amplitudeBug = calcTempAmplitudeBug(temperatures)
 // console.log(amplitudeBug);
 
-const data1 = [
-    17, 
-    21,
-    23, 
+// const data1 = [
+//     17, 
+//     21,
+//     23, 
     
-];
+// ];
 
-const data2 = [
-    12,
-    5,
-    -5,
-    0,
-    4,       
-];
-console.log(`...${data1[0]}C ... ${data1[1]}C ... ${data1[2]}C ...`);
+// const data2 = [
+//     12,
+//     5,
+//     -5,
+//     0,
+//     4,       
+// ];
+// console.log(`...${data1[0]}C ... ${data1[1]}C ... ${data1[2]}C ...`);
 
-const printForecast = function(arr) {
-    let str = '';
-    for(let i = 0; i < arr.length; i++){
-        // str = str + `${arr[i]}C in ${i + 1} days ... `
-        str += `${arr[i]}C in ${i + 1} days ... `
-    }
-    console.log(`...${str}`)
-}
-printForecast(data1)
+// const printForecast = function(arr) {
+//     let str = '';
+//     for(let i = 0; i < arr.length; i++){
+//         // str = str + `${arr[i]}C in ${i + 1} days ... `
+//         str += `${arr[i]}C in ${i + 1} days ... `
+//     }
+//     console.log(`...${str}`)
+// }
+// printForecast(data1)
 // // console.log(maxTemp)
 // const printForecast = function(){
 //    if(maxTemp[0]) {
@@ -159,3 +159,42 @@ printForecast(data1)
 //    } else {`No more forecast `}
 // }; 
 // console.log(printForecast())
+
+
+const bigNum = [
+    22,
+    3,
+    -3,
+    4,
+    13,
+    123,
+    4424,
+    2,
+    -13,
+]
+const biggest = function (num) {
+    let max = num[0];
+    // let min = num[0];
+        for( let i = 0; i < num.length; i++) {
+        const word = num[i];
+            if (word > max) max = word;
+            // if (word < min) min = word;
+    } 
+    console.log(max);
+}
+const done = biggest(bigNum)
+
+
+
+
+const practice = [ 10, 22, 314, 124213, 2, -12 , 152, -9893, 5,]
+
+const coolNum = function(thisNumber) {
+    let biggestNum = thisNumber[0]
+        for(let i = 0; i < thisNumber.length; i++) {
+        const giant = thisNumber[i];
+            if( giant > biggestNum) biggestNum = giant;
+    }
+    console.log(biggestNum);
+}
+const answer = coolNum(practice);
