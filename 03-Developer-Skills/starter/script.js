@@ -1,20 +1,20 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-const temperatures = [
-    3,
-    -2,
-    -6,
-    -1,
-    'error',
-    9,
-    13,
-    17,
-    15,
-    14,
-    9,
-    5,
-];
+// const temperatures = [
+//     3,
+//     -2,
+//     -6,
+//     -1,
+//     'error',
+//     9,
+//     13,
+//     17,
+//     15,
+//     14,
+//     9,
+//     5,
+// ];
 
 
 
@@ -30,21 +30,21 @@ const temperatures = [
 // Find min value
 //Subtract min from max and return it
 
-const calcTempAmplitude = function (temps) {
-    let max = temps[0];
-    let min = temps[0];
-        for (let i = 0; i < temps.length; i++) {
-        const curTemp = temps[i];
-        if(typeof curTemp !== 'number') continue;
+// const calcTempAmplitude = function (temps) {
+//     let max = temps[0];
+//     let min = temps[0];
+//         for (let i = 0; i < temps.length; i++) {
+//         const curTemp = temps[i];
+//         if(typeof curTemp !== 'number') continue;
 
-        if (curTemp > max) max = curTemp;
-        if (curTemp < min) min = curTemp;
-    }
-    console.log(max, min);
-    return max - min;
-}
-const amplitudde = calcTempAmplitude(temperatures)
-console.log(amplitudde);
+//         if (curTemp > max) max = curTemp;
+//         if (curTemp < min) min = curTemp;
+//     }
+//     console.log(max, min);
+//     return max - min;
+// }
+// const amplitudde = calcTempAmplitude(temperatures)
+// console.log(amplitudde);
 
 // // Problem 2
 // //Function should recieve 2 arrays of temp
@@ -161,66 +161,181 @@ console.log(amplitudde);
 // console.log(printForecast())
 
 
-const bigNum = [
-    22,
-    3,
-    -3,
-    4,
-    13,
-    123,
-    4424,
-    2,
-    -13,
-]
-const biggest = function (num) {
-    let max = num[0];
-    // let min = num[0];
-        for( let i = 0; i < num.length; i++) {
-        const word = num[i];
-            if (word > max) max = word;
-            // if (word < min) min = word;
-    } 
-    console.log(max);
+// const bigNum = [
+//     22,
+//     3,
+//     -3,
+//     4,
+//     13,
+//     123,
+//     4424,
+//     2,
+//     -13,
+// ]
+// const biggest = function (num) {
+//     let max = num[0];
+//     // let min = num[0];
+//         for( let i = 0; i < num.length; i++) {
+//         const word = num[i];
+//             if (word > max) max = word;
+//             // if (word < min) min = word;
+//     } 
+//     console.log(max);
+// }
+// const done = biggest(bigNum)
+
+
+
+
+// const practice = [ 10, 22, 314, 124213, 2, -12 , 152, -9893, 5,]
+
+// const coolNum = function(thisNumber) {
+//     let biggestNum = thisNumber[0]
+//         for(let i = 0; i < thisNumber.length; i++) {
+//         const giant = thisNumber[i];
+//             if( giant > biggestNum) biggestNum = giant;
+//     }
+//     console.log(biggestNum);
+// }
+// const answer = coolNum(practice);
+
+
+
+// const number = [ 12, 22, 31, 1, 22, -32, 3321, 3,]
+
+// const big = function(arr) {
+//     let max = arr[0]
+//     for( let i = 0; i < arr.length; i++){
+//     const check = arr[i];
+//         if(check > max) max = check;
+// } console.log(max);
+// }
+// const maxNumber = big(number)
+
+
+
+// const findMax = [22, 454, -23, 312, 443, 2, -34, -12, 44, -827,]
+
+// const lastPractice = function(arrow) {
+//     let maximum = arrow[0]
+//     for(let i = 0; i < arrow.length; i++) {
+//         const ifNum = arrow[i] 
+//         if(ifNum > maximum) maximum = ifNum;
+//     } console.log(maximum);
+// }
+// const checkResult = lastPractice(findMax)
+
+
+
+// const loopPrac = [ 2, 0, 12, 231, 1, -32, -944, 2933,]
+
+// const coolFunc = function(arrowLoop){
+//     let maxmax = arrowLoop[0];
+//     for(let i = 0; i < arrowLoop.length; i++) {
+//         let nextNum = arrowLoop[i]
+//         if(nextNum > maxmax) maxmax = nextNum
+//     } console.log(maxmax)
+// }
+// const reallyLast = coolFunc(loopPrac)
+
+
+
+const chislo = [ 1, 222, -432, 12, 23394, -101, 104, -339, 441, -893, 93, 121,]
+
+const rabotay = function(arr){
+    let maxChislo = arr[0];
+    let minChislo = arr[0];
+    for( let i = 0; i < arr.length; i++) {
+        const ustal = arr[i]
+        if(ustal > maxChislo) maxChislo = ustal
+        if(ustal < minChislo) minChislo = ustal
+} console.log(minChislo, maxChislo)
 }
-const done = biggest(bigNum)
+const konets = rabotay(chislo)
 
 
 
 
-const practice = [ 10, 22, 314, 124213, 2, -12 , 152, -9893, 5,]
-
-const coolNum = function(thisNumber) {
-    let biggestNum = thisNumber[0]
-        for(let i = 0; i < thisNumber.length; i++) {
-        const giant = thisNumber[i];
-            if( giant > biggestNum) biggestNum = giant;
-    }
-    console.log(biggestNum);
-}
-const answer = coolNum(practice);
 
 
 
-const number = [ 12, 22, 31, 1, 22, -32, 3321, 3,]
-
-const big = function(arr) {
-    let max = arr[0]
-    for( let i = 0; i < arr.length; i++){
-    const check = arr[i];
-        if(check > max) max = check;
-} console.log(max);
-}
-const maxNumber = big(number)
 
 
 
-const findMax = [22, 454, -23, 312, 443, 2, -34, -12, 44, -827,]
 
-const lastPractice = function(arrow) {
-    let maximum = arrow[0]
-    for(let i = 0; i < arrow.length; i++) {
-        const ifNum = arrow[i] 
-        if(ifNum > maximum) maximum = ifNum;
-    } console.log(maximum);
-}
-const checkResult = lastPractice(findMax)
+
+
+
+
+
+
+
+// const findMax = [ 1, 23, 332, 123, 441233, 33231, 1,]
+
+// const findFunc = function(arrow){
+//     let maxNum = arrow[0];
+//     for( let i = 0; i < arrow.length; i++){
+//     const nextNum = arrow[i];
+//     if(nextNum > maxNum) maxNum = nextNum
+// } console.log(maxNum);
+// }
+// const arrCheck = findFunc(findMax)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const findMaxNum = [ 1, 223, 221, 944, 10, 827 , -12, 213454, -5324, 3341, 2,]
+
+// const thisFunc = function(arr) {
+//     let maxNum = arr[0];
+//     let minNum = arr[0];
+//     for( let i = 0; i < arr.length; i++){
+//         const condition = arr[i]
+//         if(condition > maxNum) maxNum = condition
+//         if(condition < minNum) minNum = condition
+//     } console.log(minNum, maxNum)
+// }
+// const funcCheck = thisFunc(findMaxNum)
