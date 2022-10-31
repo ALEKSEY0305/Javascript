@@ -240,18 +240,18 @@
 
 
 
-const chislo = [ 1, 222, -432, 12, 23394, -101, 104, -339, 441, -893, 93, 121,]
+// const chislo = [ 1, 222, -432, 12, 23394, -101, 104, -339, 441, -893, 93, 121,]
 
-const rabotay = function(arr){
-    let maxChislo = arr[0];
-    let minChislo = arr[0];
-    for( let i = 0; i < arr.length; i++) {
-        const ustal = arr[i]
-        if(ustal > maxChislo) maxChislo = ustal
-        if(ustal < minChislo) minChislo = ustal
-} console.log(minChislo, maxChislo)
-}
-const konets = rabotay(chislo)
+// const rabotay = function(arr){
+//     let maxChislo = arr[0];
+//     let minChislo = arr[0];
+//     for( let i = 0; i < arr.length; i++) {
+//         const ustal = arr[i]
+//         if(ustal > maxChislo) maxChislo = ustal
+//         if(ustal < minChislo) minChislo = ustal
+// } console.log(minChislo, maxChislo)
+// }
+// const konets = rabotay(chislo)
 
 
 
