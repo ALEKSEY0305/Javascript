@@ -198,3 +198,29 @@ const coolNum = function(thisNumber) {
     console.log(biggestNum);
 }
 const answer = coolNum(practice);
+
+
+
+const number = [ 12, 22, 31, 1, 22, -32, 3321, 3,]
+
+const big = function(arr) {
+    let max = arr[0]
+    for( let i = 0; i < arr.length; i++){
+    const check = arr[i];
+        if(check > max) max = check;
+} console.log(max);
+}
+const maxNumber = big(number)
+
+
+
+const findMax = [22, 454, -23, 312, 443, 2, -34, -12, 44, -827,]
+
+const lastPractice = function(arrow) {
+    let maximum = arrow[0]
+    for(let i = 0; i < arrow.length; i++) {
+        const ifNum = arrow[i] 
+        if(ifNum > maximum) maximum = ifNum;
+    } console.log(maximum);
+}
+const checkResult = lastPractice(findMax)
