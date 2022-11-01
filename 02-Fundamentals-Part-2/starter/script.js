@@ -676,3 +676,31 @@
 //     dice = Math.trunc(Math.random() * 6) + 1;
 //     if(dice === 6) console.log(`It is 6 now`);
 // }
+
+// const findNum = [32, 324, 124, 524, 4, -2, 45, -15,]
+
+// const func = function(arr) {
+// let max = arr[0]
+// let min = arr[0]
+// for (let i = 0; i < arr.length; i++){
+//     let arrow = arr[i]
+//     if(arrow > max) max = arrow
+//     if(arrow < min) min = arrow
+//     } console.log(min, max)
+// }
+// const ready = func(findNum)
+
+
+
+const numbers = [12, 223, 42, -23, 6, -452, 1]
+
+const maxNum = function(arr){
+    let max = arr[0]
+    let min = arr[0]
+    for( let i = 0; i < arr.length; i++) {
+        let arrow = arr[i]
+        if(arrow > max) max = arrow
+        if(arrow < min) min = arrow
+    }console.log(min, max)
+}
+const ready = maxNum(numbers)
