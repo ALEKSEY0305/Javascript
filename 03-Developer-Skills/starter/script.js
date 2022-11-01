@@ -339,3 +339,34 @@
 //     } console.log(minNum, maxNum)
 // }
 // const funcCheck = thisFunc(findMaxNum)
+
+// const numbers = [23, 2334, 53, 5465, 774453,]
+
+// const numFunc = function(arr) {
+//     let max = arr[0]
+//     let min = arr[0]
+//     for(let i = 0; i < arr.length; i++) {
+//         const array = arr[i];
+//         if(array > max) max = array
+//         if(array < min) min = array
+//     } console.log(min, max)
+// }
+// const result = numFunc(numbers)
+
+
+
+
+
+
+// const randomNum = [12, 244, 214, -213, 512, -745, 866, -985, 1, 4563, -6987934, 35, 5, 6, -9786];
+
+// const biggestNum = function(arr) {
+//     let max = arr[0]
+//     let min = arr[0]
+//     for( let i = 0; i < arr.length; i++) {
+//         const array = arr[i];
+//         if(array > max) max = array
+//         if(array < min) min = array
+//     }console.log(min, max)
+// }
+// const check = biggestNum(randomNum);
