@@ -49,8 +49,63 @@ const numbers = [21, 221, 543234, 435,]
 const bigNum = function(arr) {
     let max = arr[0];
     for(let i = 0; i < arr.length; i++) {
-        const arrow = arr[i]
-        if(arrow > max) max = arrow
+        const array = arr[i]
+        if(array > max) max = array
     } console.log(max)
 }
 const check = bigNum(numbers)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(me);                   // Cannot access a variable before declaration.
+// console.log(job);                   // Dead zone
+// console.log(year);            
+
+var me = 'Alex';                    // will be hoisted but turns into UNDFINED
+let job = 'teacher';
+const year = 1991;
+
+// FUNCTIONS
+console.log(addDecl(2, 3))             // can Access
+// console.log(addExpr(2, 3))             // cannot Access because it was declared as CONST
+// console.log(addArrow(2, 3))            // will not work
+
+function addDecl(a, b) {
+    return a + b;
+}
+
+const addExpr = function(a, b) {
+    return a + b;
+}
+
+var addArrow = (a, b) => a + b;
+
+
+
+
+//Example
+console.log(numProducts) ;             // will be undefined
+if(!numProducts) deleteShoppingCart();       //will work because var will be undefined
+var numProducts = 10;                // will be undefined
+function deleteShoppingCart() {
+    console.log('All products are deleted');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x) // VAR variable will create properties in Window
+console.log(y === window.y)
+console.log(z === window.z)
