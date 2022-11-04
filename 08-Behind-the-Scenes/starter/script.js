@@ -36,13 +36,21 @@ calcAge(1995);
 
 
 
-
-
-
-
-
 // TERMINAL RESULTS Alex, you are 27, born in 1995
 // script.js:18 Oh, you are a millenial, Steven            ==>  First output
 // script.js:22 9
 // script.js:25 true
 // script.js:28 NEW OUTPUT       ==> Second output
+
+
+
+const numbers = [21, 221, 543234, 435,]
+
+const bigNum = function(arr) {
+    let max = arr[0];
+    for(let i = 0; i < arr.length; i++) {
+        const arrow = arr[i]
+        if(arrow > max) max = arrow
+    } console.log(max)
+}
+const check = bigNum(numbers)
