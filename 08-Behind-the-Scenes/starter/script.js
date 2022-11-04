@@ -120,41 +120,140 @@
 
 
 
-// THIS
+// // THIS
 
-// console.log(this);
+// // console.log(this);
 
-const calcAge = function(birthYear) {
-    console.log(2022 - birthYear);
-    console.log(this);
+// const calcAge = function(birthYear) {
+//     console.log(2022 - birthYear);
+//     console.log(this);
+// };
+// calcAge(1995);
+
+
+// const calcAgeArrow = birthYear => {
+//     console.log(2022 - birthYear);
+//     // console.log(this);
+// };
+// calcAgeArrow(1951);
+
+// const alex = {
+//     year: 1995,
+//     calcAge: function () {
+//         console.log(this);    //opens Window because it has no params
+//         console.log(2022 - this.year);  // will work because param is attached to it
+//     },
+// };
+// alex.calcAge();
+
+
+// const matilda = {
+//     year: 2017,
+// };
+
+
+
+// matilda.calcAge = alex.calcAge;     //metjod borrowing
+// matilda.calcAge();                  // 'this' from 144 is pointed to Matilda.  This keyword is dynamic
+
+// const f = alex.calcAge;
+// // f();                               //regular func  not attached to anything
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Regular functions and Arrow functions
+
+
+// // var firstName = 'Matilda'       //creates an object in Window, and 186 will say 'Hey Matilda'
+// const alex = {
+//     firstName: 'Alex',                      //method
+//     year: 1995,
+//     calcAge: function () {
+//         console.log(this);    //opens Window because it has no params
+//         console.log(2022 - this.year);  // will work because param is attached to it
+
+
+
+//         //  SOLUTION 1
+//         // const self = this; // self or that      // shows true
+//         // const isMillenial = function () {
+//         //     console.log(self)
+//         //     console.log(self.year >= 1981 && self.year <= 1996);
+//         // };
+
+
+
+
+
+//         // SOLUTION 2
+//         // const isMillenial = function () {
+//         const isMillenial =  () => {
+//             console.log(this)
+//             console.log(this.year >= 1981 && this.year <= 1996);
+//         };
+//         isMillenial(); // this is undefined inside of a regular function
+//     },
+
+//     // greet: function () { // gets his own this keyword
+//     //     console.log(`Hey ${this.firstName}`);  
+    
+//     greet: () => {
+//         console.log(this);  
+//         console.log(`Hey ${this.firstName}`);   //undefined because arrow doesn't own this keyword
+//     },
+// };
+
+// alex.greet(); 
+// // console.log(this.firstName);        // this is a window object that's why undefined
+// alex.calcAge()      // this is undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Arguments keyword        //Not actual, but good to know
+const addExpr = function(a, b) {
+    console.log(arguments)
+    return a + b;
 };
-calcAge(1995);
+addExpr(2, 5);
+addExpr(2, 5, 8, 12)
+
+// var addArrow = (a, b) => {
+//     console.log(arguments);
+//     return a + b;
+// };
+// addArrow(2, 5, 8);
 
 
-const calcAgeArrow = birthYear => {
-    console.log(2022 - birthYear);
-    // console.log(this);
-};
-calcAgeArrow(1951);
-
-const alex = {
-    year: 1995,
-    calcAge: function () {
-        console.log(this);    //opens Window because it has no params
-        console.log(2022 - this.year);  // will work because param is attached to it
-    },
-};
-alex.calcAge();
-
-
-const matilda = {
-    year: 2017,
-};
-
-
-
-matilda.calcAge = alex.calcAge;     //metjod borrowing
-matilda.calcAge();                  // 'this' from 144 is pointed to Matilda.  This keyword is dynamic
-
-const f = alex.calcAge;
-f();                               //regular func  not attached to anything
