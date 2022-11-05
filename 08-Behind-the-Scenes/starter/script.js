@@ -265,22 +265,58 @@
 
 
 
-let age = 30;
-let oldAge = age;
-age = 31;
-console.log(age)
-console.log(oldAge)
+// let age = 30;
+// let oldAge = age;
+// age = 31;
+// console.log(age)
+// console.log(oldAge)
 
 
 
-const me = {
-    name: 'Jonas',
-    age: 30,
+// const me = {
+//     name: 'Jonas',
+//     age: 30,
+// };
+
+// const friend = me;
+// friend.age = 27;
+// console.log('Friend', friend);
+// console.log('Me', me)
+
+
+// let lastName = 'Williams';      //because the data is kept is call stack
+// let oldLastName = lastName;
+// lastName = 'Davis';
+// console.log(lastName, oldLastName)  //Davis Williams
+
+
+// const jessica = {
+//     firstName: 'Jessica',
+//     lastName: 'Williams',
+//     age: 27,
+// };
+// const marriedJessica = jessica;            // bacause data is keps in HEAP
+// marriedJessica.lastName = 'Davis';
+// console.log('Before the marriage:' , jessica2);
+// console.log('After the marriage', jessicaCopy);
+//Before the Marriage: { firstName: 'Jessica', lastName: 'Davis', age: 27 }
+// After the marriage { firstName: 'Jessica', lastName: 'Davis', age: 27 }
+
+
+// marriedJessica = {}; // Can't do that because the object is alreade saved in the heap
+
+const jessica2 = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
+    family: ['Alice', 'Bob']
 };
 
-const friend = me;
-friend.age = 27;
-console.log('Friend', friend);
-console.log('Me', me)
+const jessicaCopy = Object.assign({}, jessica2);            //Object.assign creates a shallow copy and alows to maipulate objects
+jessicaCopy.lastName = 'Davis';
 
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
 
+console.log('Before the marriage:' , jessica2);
+console.log('After the marriage', jessicaCopy);
