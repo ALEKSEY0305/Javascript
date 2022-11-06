@@ -45,50 +45,80 @@ const restaurant = {
   }
 };
 
-
-
-// 1) Destructurinig
-//Spread, because on Right side of = 
-const arr = [1, 2, ...[3, 4]];
-
-
-
-// Rest because on the left side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5]
-console.log(a, b, others)
-
-
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood)
+console.log('----- OR -----');
+// Use ANY data type, return ANY data type, short-circutting
+console.log( 3 || 'Alex');  // 3
+console.log( '' || 'Alex'); // Alex
+console.log( true || 0 );   // true
+console.log( undefined || null);  // null
 
 
 
-// Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays)     // {thu: {…}, fri: {…}}
 
-// 2) Functions
-const add = function(...numbers) {
-  // console.log(numbers);
-  let sum = 0;
-  for(let i = 0; i < numbers.length; i++) 
-  // sum += numbers[i];
-  sum = sum + numbers[i];
-  console.log(sum)
+console.log(undefined || 0 || '' || 'Hello' || 23 || null) //Hello  
+restaurant.numGuests = 0; // falsy. will show 10
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1)      //23
+
+const guests2 = restaurant.numGuests || 10
+console.log(guests2)    //23
+
+
+console.log('----- AND -----');   //SHOWS FALSY VALUE
+
+
+console.log(0 && 'Alex'); // 0 = falsy
+console.log(7 && 'Alex'); //Alex        7 is true
+console.log(' Hello' && 23 && null && 'Alex');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
 }
-add(2,3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
 
-const x = [23, 5, 7];
-add(...x);
-console.log(x);
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms')
+// // 1) Destructurinig
+// //Spread, because on Right side of = 
+// const arr = [1, 2, ...[3, 4]];
+
+
+
+// // Rest because on the left side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5]
+// console.log(a, b, others)
+
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood)
+
+
+
+// // Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays)     // {thu: {…}, fri: {…}}
+
+// // 2) Functions
+// const add = function(...numbers) {
+//   // console.log(numbers);
+//   let sum = 0;
+//   for(let i = 0; i < numbers.length; i++) 
+//   // sum += numbers[i];
+//   sum = sum + numbers[i];
+//   console.log(sum)
+// }
+// add(2,3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
+
+// const x = [23, 5, 7];
+// add(...x);
+// console.log(x);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms')
 
 
 
