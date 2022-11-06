@@ -45,37 +45,55 @@ const restaurant = {
   }
 };
 
-console.log('----- OR -----');
-// Use ANY data type, return ANY data type, short-circutting
-console.log( 3 || 'Alex');  // 3
-console.log( '' || 'Alex'); // Alex
-console.log( true || 0 );   // true
-console.log( undefined || null);  // null
 
-
-
-
-console.log(undefined || 0 || '' || 'Hello' || 23 || null) //Hello  
 restaurant.numGuests = 0; // falsy. will show 10
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1)      //23
+const guests = restaurant.numGuests || 10;
+console.log(guests);    //23
 
-const guests2 = restaurant.numGuests || 10
-console.log(guests2)    //23
+//Knowledge coalesing operator 
+//uses NULL and UNDFINED instead of FALSY
+const guestCorrect = restaurant.numGuests ?? 10; //almost the samw as ||
+console.log(guestCorrect)
 
 
-console.log('----- AND -----');   //SHOWS FALSY VALUE
 
 
-console.log(0 && 'Alex'); // 0 = falsy
-console.log(7 && 'Alex'); //Alex        7 is true
-console.log(' Hello' && 23 && null && 'Alex');
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// Shortcuiting
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+
+
+// console.log('----- OR -----');
+// // Use ANY data type, return ANY data type, short-circutting
+// console.log( 3 || 'Alex');  // 3
+// console.log( '' || 'Alex'); // Alex
+// console.log( true || 0 );   // true
+// console.log( undefined || null);  // null
+
+
+
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null) //Hello  
+// restaurant.numGuests = 0; // falsy. will show 10
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1)      //23
+
+// const guests2 = restaurant.numGuests || 10
+// console.log(guests2)    //23
+
+
+// console.log('----- AND -----');   //SHOWS FALSY VALUE
+
+
+// console.log(0 && 'Alex'); // 0 = falsy
+// console.log(7 && 'Alex'); //Alex        7 is true
+// console.log(' Hello' && 23 && null && 'Alex');
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 // // 1) Destructurinig
 // //Spread, because on Right side of = 
