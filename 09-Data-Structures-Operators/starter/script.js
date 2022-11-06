@@ -79,4 +79,28 @@ console.log(i, j, k);
 
 //Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
+
+
 console.log(p, q, r);
+
+const tryArr = [1, 2, 3, 4, 5];
+
+const [s, t, , u, v] = tryArr;
+console.log(s, t, u, v)
+
+
+
+// let age = prompt('Tell me your age');
+// if (age > 35){
+//   console.log(`You are old, dude😂`)
+// } else if( age < 35 && age > 25){
+//   console.log(`You are still young, but not for long👀`)
+// } else{
+//   console.log(`You young and fresh. Enjoy it`)
+// }
+
+let [option1, option2] = restaurant.starterMenu;
+console.log(option1, option2);
+
+[option1, option2] = [option2, option1];
+console.log(option1, option2)

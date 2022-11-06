@@ -22,7 +22,7 @@ const displayScore = function(score) {
 };
 
 document.querySelector('.check').addEventListener('click', function() {
-    const guess = Number(document.querySelector('.guess').value);
+    let guess = Number(document.querySelector('.guess').value);
     // console.log(guess, typeof guess)
 
     // When there's no input
@@ -62,3 +62,4 @@ document.querySelector('.again').addEventListener('click', function(){
         document.querySelector('body').style.backgroundColor = '#222';
         document.querySelector('.number').style.width = '15rem';
 })
+
