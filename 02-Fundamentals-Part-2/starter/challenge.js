@@ -282,65 +282,78 @@
 
 // console.log(bills, tips)
 
-const bills = [
-    22,
-    205,
-    176,
-    440,
-    37,
-    105,
-    10,
-    1100,
-    86,
-    52,
-]
-const tips = [];
-const totals = [];
+// const bills = [
+//     22,
+//     205,
+//     176,
+//     440,
+//     37,
+//     105,
+//     10,
+//     1100,
+//     86,
+//     52,
+// ]
+// const tips = [];
+// const totals = [];
 
-for(let i = 0; i < bills.length; i++) {
-    tips.push(bills [i] > 50 && bills[i] < 300 ? bills[i] * .15 : bills[i] * .2)
-    totals.push(tips[i] + bills[i])
-}
-console.log(bills, tips, totals)
+// for(let i = 0; i < bills.length; i++) {
+//     tips.push(bills [i] > 50 && bills[i] < 300 ? bills[i] * .15 : bills[i] * .2)
+//     totals.push(tips[i] + bills[i])
+// }
+// console.log(bills, tips, totals)
 
 
-const love = 'I LOVE YOU!';
-for (let i = 0; i < love.length; i++) {
-    console.log(love[i]);
-}
+// const love = 'I LOVE YOU!';
+// for (let i = 0; i < love.length; i++) {
+//     console.log(love[i]);
+// }
 
-const alex = [
-    'Alex',
-    'Kim',
-    2037 - 1995,
-    'teacher',
-    ['Tim', 'Peter', 'Nick'],
-    true,
-    false,
-];
-const types = [];
+// const alex = [
+//     'Alex',
+//     'Kim',
+//     2037 - 1995,
+//     'teacher',
+//     ['Tim', 'Peter', 'Nick'],
+//     true,
+//     false,
+// ];
+// const types = [];
 
-for (let i = 0; i <= 6; i++) {
-    //REading from alex array
-    console.log(alex[i], typeof alex[i]);
+// for (let i = 0; i <= 6; i++) {
+//     //REading from alex array
+//     console.log(alex[i], typeof alex[i]);
 
-    types[i] = typeof alex[i];
+//     types[i] = typeof alex[i];
 
-    //filling types array
-    //types[i] = typeof alex
-    types.push(typeof alex[i]);
-}
-console.log(types);
+//     //filling types array
+//     //types[i] = typeof alex
+//     types.push(typeof alex[i]);
+// }
+// console.log(types);
 
-const years = [
-    1991,
-    2007,
-    1969,
-    2020,
-]
-const ages = []
+// const years = [
+//     1991,
+//     2007,
+//     1969,
+//     2020,
+// ]
+// const ages = []
 
-for(let i = 0; i < years.length; i++) {
-    ages.push(2037 - years[i]);
-}
-console.log(ages)
+// for(let i = 0; i < years.length; i++) {
+//     ages.push(2037 - years[i]);
+// }
+// console.log(ages)
+
+
+
+const numbers = [12, 23, 43, 5423, 6346, 66,]
+
+let numCheck = function(arr) {
+  let max = arr[0];
+  for( i = 0; i < arr.length; i++) {
+  let array = arr[i];
+  if(array > max) max = array;
+  } console.log(max)
+};
+const check = numCheck(numbers)
