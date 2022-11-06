@@ -40,33 +40,63 @@ const restaurant = {
   }
 };
 
-const arr = [7, 8, 9];
-const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArray);
 
-const newArr = [1, 2, ...arr]
-console.log(newArr)
 
-console.log(...newArr);
-console.log(1, 2, 7, 8, 9)
+// 1) Destructurinig
+//Spread, because on Right side of = 
+const arr = [1, 2, ...[3, 4]];
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu)
 
-//copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy)
 
-// join 2
-const joinTwo = [...restaurant.starterMenu, ...restaurant.mainMenu]
-console.log(joinTwo)
+// Rest because on the left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5]
+console.log(a, b, others)
+
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood)
+
+
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays)     // {thu: {…}, fri: {…}}
+
+// 2) Functions
+
+
+
+
+// const arr = [7, 8, 9];
+// const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArray);
+
+// const newArr = [1, 2, ...arr]
+// console.log(newArr)
+
+// console.log(...newArr);
+// console.log(1, 2, 7, 8, 9)
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu)
+
+// //copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy)
+
+// // join 2
+// const joinTwo = [...restaurant.starterMenu, ...restaurant.mainMenu]
+// console.log(joinTwo)
 
 
 // Iterables are arrays, strings, maps, sets. NOT objects
-const str = 'Alex';
-const letters = [...str, ' ', 'S.'];
-console.log(letters)    // ['A', 'l', 'e', 'x', ' ', 'S.']
-console.log(...str);    // A l e x
+// const str = 'Alex';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters)    // ['A', 'l', 'e', 'x', ' ', 'S.']
+// console.log(...str);    // A l e x
  
 
 // REal world Example
@@ -81,13 +111,13 @@ console.log(...str);    // A l e x
 
 
 // Objects
-const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Jonas'};
-console.log(newRestaurant);
+// const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Jonas'};
+// console.log(newRestaurant);
 
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 
 // DESTRUCTURING OBJECTS
