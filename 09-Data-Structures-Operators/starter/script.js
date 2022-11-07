@@ -46,14 +46,46 @@ const restaurant = {
 };
 
 
-restaurant.numGuests = 0; // falsy. will show 10
-const guests = restaurant.numGuests || 10;
-console.log(guests);    //23
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,   // 0 is a FAlSY value
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
 
-//Knowledge coalesing operator 
-//uses NULL and UNDFINED instead of FALSY
-const guestCorrect = restaurant.numGuests ?? 10; //almost the samw as ||
-console.log(guestCorrect)
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//Nullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+//And assignment operator
+// rest1.owner = rest1.owner && '<Anonymous>'  //If true, will show the second value
+// rest2.owner = rest2.owner && '<Anonymous>'
+rest1.owner &&= '<Anonymous>'
+rest2.owner &&= '<Anonymous>'
+
+
+console.log(rest1)
+console.log(rest2)
+
+// // The Nullish coalescing operator
+// restaurant.numGuests = 0; // falsy. will show 10
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);    //23
+
+// //Knowledge coalesing operator 
+// //uses NULL and UNDFINED instead of FALSY
+// const guestCorrect = restaurant.numGuests ?? 10; //almost the samw as ||
+// console.log(guestCorrect)
 
 
 
