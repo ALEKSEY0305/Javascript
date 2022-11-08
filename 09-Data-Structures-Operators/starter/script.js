@@ -472,13 +472,13 @@ const restaurant = {
 
 
 
-// const randomNum = [12, 21, 34, 55553, 53, 23, 47,]
+const randomNum = [12, 21, 34, 55553, 53, 23, 47,]
 
-// const findNum = function(arr) {
-//   let max = arr[0];
-//   for( let i = 0; i < arr.length; i++) {
-//     let array = arr[i]
-//     if(array > max) max = array
-//   } console.log(max)
-// }
-// const check = findNum(randomNum)
+const findNum = function(arr) {
+  let max = arr[0];
+  for( let i = 0; i < arr.length; i++) {
+    let array = arr[i]
+    if(array > max) max = array
+  } console.log(max)
+}
+const check = findNum(randomNum)
