@@ -45,37 +45,123 @@ const restaurant = {
   }
 };
 
+const game = {
+  team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
+  [
+  'Neuer',
+        'Pavard',
+        'Martinez',
+        'Alaba',
+        'Davies',
+        'Kimmich',
+        'Goretzka',
+        'Coman',
+        'Muller',
+        'Gnarby',
+        'Lewandowski',
+  ], [
+        'Burki',
+        'Schulz',
+        'Hummels',
+        'Akanji',
+        'Hakimi',
+        'Weigl',
+        'Witsel',
+        'Hazard',
+        'Brandt',
+        'Sancho',
+        'Gotze',
+  ], ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+    'Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+      team1: 1.33,
+      x: 3.25,
+      team2: 6.5,
+  }, };
 
-const rest1 = {
-  name: 'Capri',
-  // numGuests: 20,
-  numGuests: 0,   // 0 is a FAlSY value
-};
-const rest2 = {
-  name: 'La Piazza',
-  owner: 'Giovanni Rossi',
-};
 
-// OR assignment operator
-// rest1.numGuests = rest1.numGuests || 10;   //Assigns if the value is FALSY
-// rest2.numGuests = rest2.numGuests || 10;
+// Challenge #1
+// 1.
+const [players1, players2] = game.players;
+console.log(players1, players2);
 
-// rest1.numGuests ||= 10;
-// rest2.numGuests ||= 10;
-
-//Nullish assignment operator
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
-
-//And assignment operator
-// rest1.owner = rest1.owner && '<Anonymous>'  //If true, will show the second value
-// rest2.owner = rest2.owner && '<Anonymous>'
-rest1.owner &&= '<Anonymous>'
-rest2.owner &&= '<Anonymous>'
+// 2.
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
 
 
-console.log(rest1)
-console.log(rest2)
+//3.
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+//4. 
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic']
+console.log(players1Final);
+
+// 5. 
+// const team1 = game.odds.team1;
+// console.log(team1);
+
+// const draw = game.odds.x;
+// console.log(draw);
+
+// const team2 = game.odds.team2;
+// console.log(team2);
+
+const {odds: {team1, x: draw, team2}} = game;
+console.log(team1, draw, team2)
+
+
+// 6. 
+const printGoals = function(...goals){
+  console.log(goals)
+  console.log(`${goals.length} goals were scored`)
+}
+printGoals('Davies', 'Muller', 'Lewandowski','Kimmich');
+// printGoals(...game.scored)
+
+
+// 7. 
+const winner = game.odds.team1 <= game.odds.team2 ? `${game.team1} is likely to win` : `${game.team2} is likely to win`;
+console.log(winner)
+
+
+
+
+
+// const rest1 = {
+//   name: 'Capri',
+//   // numGuests: 20,
+//   numGuests: 0,   // 0 is a FAlSY value
+// };
+// const rest2 = {
+//   name: 'La Piazza',
+//   owner: 'Giovanni Rossi',
+// };
+
+// // OR assignment operator
+// // rest1.numGuests = rest1.numGuests || 10;   //Assigns if the value is FALSY
+// // rest2.numGuests = rest2.numGuests || 10;
+
+// // rest1.numGuests ||= 10;
+// // rest2.numGuests ||= 10;
+
+// //Nullish assignment operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// //And assignment operator
+// // rest1.owner = rest1.owner && '<Anonymous>'  //If true, will show the second value
+// // rest2.owner = rest2.owner && '<Anonymous>'
+// rest1.owner &&= '<Anonymous>'
+// rest2.owner &&= '<Anonymous>'
+
+
+// console.log(rest1)
+// console.log(rest2)
 
 // // The Nullish coalescing operator
 // restaurant.numGuests = 0; // falsy. will show 10
