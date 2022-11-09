@@ -65,8 +65,44 @@ const restaurant = {
   }
   
 };
+if(restaurant.openingHours && restaurant.openingHours.mon) console.log    //too long
+(restaurant.openingHours.mon.open)    // undefined
+
+if(restaurant.openingHours.fri) console.log
+(restaurant.openingHours.fri.open)    //friday 11
 
 
+// With optional chaining operator
+console.log(restaurant.openingHours.mon?.open)
+console.log(restaurant.openingHours.fri?.open);
+
+
+// Example
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for(const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed' // || will make it false because sunday is 0, ?? will make it work
+  console.log(`On ${day}, we open at ${open}`)
+}
+
+
+// Methods 
+console.log(restaurant.order?.(0,1) ?? `Doesn't exist`);
+console.log(restaurant.orderRisotto?.(0,1) ?? `Doesn't exist`);
+
+
+// Arrays
+
+const users = [{name: 'Jonas', email: 'alexG@gmail.com'}];
+
+// const users = []
+
+console.log(users[0]?.name ?? 'User array emppty');
+
+if(users.length > 0) console.log(users[0].name);
+else console.log(`empty`)
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // console.log(menu)
 
@@ -472,13 +508,26 @@ const restaurant = {
 
 
 
-const randomNum = [12, 21, 34, 55553, 53, 23, 47,]
+// const randomNum = [12, 21, 34, 55553, 53, 23, 47,]
 
-const findNum = function(arr) {
-  let max = arr[0];
-  for( let i = 0; i < arr.length; i++) {
-    let array = arr[i]
+// const findNum = function(arr) {
+//   let max = arr[0];
+//   for( let i = 0; i < arr.length; i++) {
+//     let array = arr[i]
+//     if(array > max) max = array
+//   } console.log(max)
+// }
+// const check = findNum(randomNum)
+
+const numbers = [23,133, 5234, 553, 7756]
+
+const big = function(arr) {
+  let max = arr[0]
+  let min = arr[0]
+  for(let i = 0; i < arr.length; i++) {
+    const array = arr[i]
     if(array > max) max = array
-  } console.log(max)
+    if( array < min) min = array
+  } console.log(min, max)
 }
-const check = findNum(randomNum)
+const check = big(numbers)
