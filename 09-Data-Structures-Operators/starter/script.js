@@ -67,32 +67,32 @@ const restaurant = {
 };
 
 
-// Property names
-const properties = Object.keys(openingHours);   //Object.keys
-console.log(properties)
+// // Property names
+// const properties = Object.keys(openingHours);   //Object.keys
+// console.log(properties)
 
-// console.log(`We are open on ${properties.length} days`)
-let openStr = `We are open on ${properties.length} days:`
-for (const day of properties) {
-  openStr += ` ${day},`;
-}
-console.log(openStr)
-
-
+// // console.log(`We are open on ${properties.length} days`)
+// let openStr = `We are open on ${properties.length} days:`
+// for (const day of properties) {
+//   openStr += ` ${day},`;
+// }
+// console.log(openStr)
 
 
-// Property VALUES
-const values = Object.values(openingHours);   //Object Values()
-console.log(values)
 
 
-// Entire object
-const entries = Object.entries(openingHours);
-console.log(entries)
+// // Property VALUES
+// const values = Object.values(openingHours);   //Object Values()
+// console.log(values)
 
-for(const [key, {open, close}] of entries) {
-  console.log(` On ${key} we open at ${open} and close at ${close}`)  // Object.entries()
-}
+
+// // Entire object
+// const entries = Object.entries(openingHours);
+// console.log(entries)
+
+// for(const [key, {open, close}] of entries) {
+//   console.log(` On ${key} we open at ${open} and close at ${close}`)  // Object.entries()
+// }
 
 
 
@@ -153,48 +153,76 @@ for(const [key, {open, close}] of entries) {
 
 
 
-// const game = {
-//   team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
-//   [
-//   'Neuer',
-//         'Pavard',
-//         'Martinez',
-//         'Alaba',
-//         'Davies',
-//         'Kimmich',
-//         'Goretzka',
-//         'Coman',
-//         'Muller',
-//         'Gnarby',
-//         'Lewandowski',
-//   ], [
-//         'Burki',
-//         'Schulz',
-//         'Hummels',
-//         'Akanji',
-//         'Hakimi',
-//         'Weigl',
-//         'Witsel',
-//         'Hazard',
-//         'Brandt',
-//         'Sancho',
-//         'Gotze',
-//   ], ],
-//     score: '4:0',
-//     scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-//     'Hummels'],
-//     date: 'Nov 9th, 2037',
-//     odds: {
-//       team1: 1.33,
-//       x: 3.25,
-//       team2: 6.5,
-//   }, };
+const game = {
+  team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
+  [
+  'Neuer',
+        'Pavard',
+        'Martinez',
+        'Alaba',
+        'Davies',
+        'Kimmich',
+        'Goretzka',
+        'Coman',
+        'Muller',
+        'Gnarby',
+        'Lewandowski',
+  ], [
+        'Burki',
+        'Schulz',
+        'Hummels',
+        'Akanji',
+        'Hakimi',
+        'Weigl',
+        'Witsel',
+        'Hazard',
+        'Brandt',
+        'Sancho',
+        'Gotze',
+  ], ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+    'Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+      team1: 1.33,
+      x: 3.25,
+      team2: 6.5,
+  }, };
+
+// const goals = game.scored
+// for(const [scored] of goals) {
+//   console.log(`Goal 1: ${game.scored[0]}, Goal 2: ${game.scored[1]}, Goal 3: ${game.scored[2]}, Goal 4: ${game.scored[3]}`)
+//   // console.log(goals)
+// } 
+
+//1 
+for(const [i, player] of game.scored.entries()) 
+  console.log(`Goal ${i + 1}: ${player}`)
+  // console.log(goals)
 
 
+// const average = game.odds
+// for(const [num] of average) {
+//   console.log(`(${average[0]} + ${game.odds.x} + ${game.odds.team2}) / 3`)
+// } 
 
 
+const odds = Object.values(game.odds);
+let average = 0;
+for(const odd of odds) average += odd;
 
-// Challenge #1
+// console.log(average)
+average /= odds.length;     // = 11.08 / 3
+console.log(average);
+
+
+//3
+for(const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+//Challenge #1
 // // 1.
 // const [players1, players2] = game.players;
 // console.log(players1, players2);
@@ -240,6 +268,7 @@ for(const [key, {open, close}] of entries) {
 // console.log(winner)
 
 
+//Challenge 2 
 
 
 
@@ -550,15 +579,15 @@ for(const [key, {open, close}] of entries) {
 // }
 // const check = findNum(randomNum)
 
-const numbers = [23,133, 5234, 553, 7756]
+// const numbers = [23,133, 5234, 553, 7756]
 
-const big = function(arr) {
-  let max = arr[0]
-  let min = arr[0]
-  for(let i = 0; i < arr.length; i++) {
-    const array = arr[i]
-    if(array > max) max = array
-    if( array < min) min = array
-  } console.log(min, max)
-}
-const check = big(numbers)
+// const big = function(arr) {
+//   let max = arr[0]
+//   let min = arr[0]
+//   for(let i = 0; i < arr.length; i++) {
+//     const array = arr[i]
+//     if(array > max) max = array
+//     if( array < min) min = array
+//   } console.log(min, max)
+// }
+// const check = big(numbers)
