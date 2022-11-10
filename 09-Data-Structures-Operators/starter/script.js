@@ -66,48 +66,84 @@ const restaurant = {
   
 };
 
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
 
 
+const events = [
+  '⚽️ GOAL',
+  '🔁 Substitution',
+  '🔶 Yellow card',
+  '🔴 Red card'
+]
+gameEvents.delete(64)
+console.log(gameEvents)
 
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct🎉'],
-  [false, 'Try again!'],
-])
-console.log(question)
+console.log(`An event happened, on average, every 9 minutes`);
 
-question.set(4, 'Python')
-console.log(question)
+for(const [key, value] of gameEvents) {
+  if( key < 45 ) {
+    console.log(`[First half] ${key}: ${value}`)
+  } else if( key > 45 && key < 90){
+    console.log(`[Second half] ${key}: ${value}`)
+  } else {
+    console.log(`[EXTRA TIME] ${key}: ${value}`)
 
-
-
-// CONVERT OBJECTS TO MAPS
-console.log(Object.entries(openingHours))
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap)
-
-
-// Quiz app
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if(typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+  }
 }
-// const answer = Number(prompt('Your answer'));
-const answer = 3
-console.log(answer)
-
-console.log(question.get(question.get('correct') === answer))
+// MAPS: ADVANCED
 
 
-// Convert map to array
-console.log([...question])
-console.log(question.entries());
-console.log([...question.keys()]);
-console.log([...question.values()]);
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct🎉'],
+//   [false, 'Try again!'],
+// ])
+// console.log(question)
+
+// question.set(4, 'Python')
+// console.log(question)
+
+
+
+// // CONVERT OBJECTS TO MAPS
+// console.log(Object.entries(openingHours))
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap)
+
+
+// // Quiz app
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if(typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+// // const answer = Number(prompt('Your answer'));
+// const answer = 3
+// console.log(answer)
+
+// console.log(question.get(question.get('correct') === answer))
+
+
+// // Convert map to array
+// console.log([...question])
+// console.log(question.entries());
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
 
 
 
