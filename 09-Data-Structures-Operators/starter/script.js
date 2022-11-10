@@ -66,7 +66,53 @@ const restaurant = {
   
 };
 
+const ordersSet = new Set([
+  'Pasta', 
+  'Pizza', 
+  'Pizza', 
+  'Risotto', 
+  'Pasta', 
+  'Pizza',
+]);
 
+console.log(ordersSet);
+
+console.log(new Set('Alex'));
+
+console.log(new Set());
+
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto')
+console.log(ordersSet)
+
+for( const order of ordersSet) console.log(order)
+
+
+//EXAMPLE
+
+
+
+const staff = [
+  'waiter',
+  'chef',
+  'waiter',
+  'manager',
+  'chef',
+  'waiter',
+]
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(['waiter', 'chef', 'waiter','manager', 'chef', 'waiter',]).size)
+
+
+console.log(new Set('kimalekseyromanovich').size)
 // // Property names
 // const properties = Object.keys(openingHours);   //Object.keys
 // console.log(properties)
@@ -153,42 +199,42 @@ const restaurant = {
 
 
 
-const game = {
-  team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
-  [
-  'Neuer',
-        'Pavard',
-        'Martinez',
-        'Alaba',
-        'Davies',
-        'Kimmich',
-        'Goretzka',
-        'Coman',
-        'Muller',
-        'Gnarby',
-        'Lewandowski',
-  ], [
-        'Burki',
-        'Schulz',
-        'Hummels',
-        'Akanji',
-        'Hakimi',
-        'Weigl',
-        'Witsel',
-        'Hazard',
-        'Brandt',
-        'Sancho',
-        'Gotze',
-  ], ],
-    score: '4:0',
-    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-    'Hummels'],
-    date: 'Nov 9th, 2037',
-    odds: {
-      team1: 1.33,
-      x: 3.25,
-      team2: 6.5,
-  }, };
+// const game = {
+//   team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
+//   [
+//   'Neuer',
+//         'Pavard',
+//         'Martinez',
+//         'Alaba',
+//         'Davies',
+//         'Kimmich',
+//         'Goretzka',
+//         'Coman',
+//         'Muller',
+//         'Gnarby',
+//         'Lewandowski',
+//   ], [
+//         'Burki',
+//         'Schulz',
+//         'Hummels',
+//         'Akanji',
+//         'Hakimi',
+//         'Weigl',
+//         'Witsel',
+//         'Hazard',
+//         'Brandt',
+//         'Sancho',
+//         'Gotze',
+//   ], ],
+//     score: '4:0',
+//     scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+//     'Hummels'],
+//     date: 'Nov 9th, 2037',
+//     odds: {
+//       team1: 1.33,
+//       x: 3.25,
+//       team2: 6.5,
+//   }, };
 
 // const goals = game.scored
 // for(const [scored] of goals) {
@@ -196,10 +242,10 @@ const game = {
 //   // console.log(goals)
 // } 
 
-//1 
-for(const [i, player] of game.scored.entries()) 
-  console.log(`Goal ${i + 1}: ${player}`)
-  // console.log(goals)
+// //1 
+// for(const [i, player] of game.scored.entries()) 
+//   console.log(`Goal ${i + 1}: ${player}`)
+//   // console.log(goals)
 
 
 // const average = game.odds
@@ -208,20 +254,20 @@ for(const [i, player] of game.scored.entries())
 // } 
 
 
-const odds = Object.values(game.odds);
-let average = 0;
-for(const odd of odds) average += odd;
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for(const odd of odds) average += odd;
 
-// console.log(average)
-average /= odds.length;     // = 11.08 / 3
-console.log(average);
+// // console.log(average)
+// average /= odds.length;     // = 11.08 / 3
+// console.log(average);
 
 
-//3
-for(const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odd}`);
-}
+// //3
+// for(const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
 //Challenge #1
 // // 1.
 // const [players1, players2] = game.players;
