@@ -66,42 +66,92 @@ const restaurant = {
   
 };
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
 
 
-const events = [
-  '⚽️ GOAL',
-  '🔁 Substitution',
-  '🔶 Yellow card',
-  '🔴 Red card'
-]
-gameEvents.delete(64)
-console.log(gameEvents)
+// Working with strings
 
-console.log(`An event happened, on average, every 9 minutes`);
+const airline = 'TAP Korean Air';
+const plane = 'A320'
 
-for(const [key, value] of gameEvents) {
-  if( key < 45 ) {
-    console.log(`[First half] ${key}: ${value}`)
-  } else if( key > 45 && key < 90){
-    console.log(`[Second half] ${key}: ${value}`)
+console.log(plane[0])
+console.log(plane[1])
+console.log(plane[2])
+console.log('B737' [0])
+
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));    //starts from 0
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('korean'))
+console.log(airline.slice(4))   //extraction starts from the 4th letter
+console.log(airline.slice(4, 7))
+
+
+console.log(airline.slice(0, airline.indexOf(' ')))
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function(seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1)
+  if(s === 'B' || s === 'E') {
+    console.log('You got the Middle seat')
   } else {
-    console.log(`[EXTRA TIME] ${key}: ${value}`)
-
+    console.log('You got lucky')
   }
 }
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+
+
+
+
+//Challenge 2
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
+
+
+// const events = [
+//   '⚽️ GOAL',
+//   '🔁 Substitution',
+//   '🔶 Yellow card',
+//   '🔴 Red card'
+// ];
+// gameEvents.delete(64);   // WAS UNFAIR. SO, REMOVED
+// console.log(gameEvents);
+
+// console.log(`An event happened, on average, every 9 minutes`);
+
+// for(const [key, value] of gameEvents) {
+//   if( key < 45 ) {
+//     console.log(`[First half] ${key}: ${value}`)
+//   } else if( key > 45 && key < 90){
+//     console.log(`[Second half] ${key}: ${value}`)
+//   } else {
+//     console.log(`[EXTRA TIME] ${key}: ${value}`)
+
+//   };
+// };
+
+
+
 // MAPS: ADVANCED
 
 
