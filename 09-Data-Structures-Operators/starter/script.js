@@ -95,6 +95,21 @@ capitalizedName('kim aleksey romanovich')
 
 
 
+// PADDING
+const message = 'Go to gate 23!'
+console.log(message.padStart(25, '+').padEnd(30, '+'))
+console.log('Alex'.padStart(25, '+'))
+console.log('Alex'.padEnd(25, '+'))
+
+const maskCreditCard = function(number) {
+  const str = number + '';
+  const last = str.slice(-4)
+  return last.padStart(str.length, '*');
+}
+console.log(maskCreditCard(2314233))
+console.log(maskCreditCard(231421541242133))
+console.log(maskCreditCard('76823142154124213365'))
+
 // WORKING WITH STRING - PART 2
 
 // const airline = 'TAP Korean Air'
