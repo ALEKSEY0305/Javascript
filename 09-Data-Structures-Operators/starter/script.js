@@ -68,45 +68,121 @@ const restaurant = {
 
 
 
-// Working with strings
 
-const airline = 'TAP Korean Air';
-const plane = 'A320'
+const airline = 'TAP Korean Air'
 
-console.log(plane[0])
-console.log(plane[1])
-console.log(plane[2])
-console.log('B737' [0])
+console.log(airline.toUpperCase())
+console.log(airline.toLowerCase())
 
 
-console.log(airline.length);
-console.log('B737'.length);
+//fixing typos
+const passenger = 'aLex'
+const passengerLower = passenger.toLowerCase()
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1)
+console.log(passengerCorrect);
 
-console.log(airline.indexOf('r'));    //starts from 0
-console.log(airline.lastIndexOf('r'));
-console.log(airline.indexOf('korean'))
-console.log(airline.slice(4))   //extraction starts from the 4th letter
-console.log(airline.slice(4, 7))
+// user input email comparingg
+
+const email = 'hello@alex.io';
+const logInEmail = 'Hello@Alex.Io \n';
+
+// const lowerEmail = logInEmail.toLowerCase()
+// const trimmedEmail = lowerEmail.trim()
+// console.log(trimmedEmail)
+
+ 
+const normalizedEmail = logInEmail.toLowerCase().trim();
+console.log(normalizedEmail)
+console.log(email === normalizedEmail);
 
 
-console.log(airline.slice(0, airline.indexOf(' ')))
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// REPLACING 
+const priceGB = '288,97#'
+const priceUS = priceGB.replace('#', '$').replace(',', '.')
+console.log(priceUS)
 
-const checkMiddleSeat = function(seat) {
-  // B and E are middle seats
-  const s = seat.slice(-1)
-  if(s === 'B' || s === 'E') {
-    console.log('You got the Middle seat')
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23';
+console.log(announcement.replace('door', 'gate'))
+console.log(announcement.replaceAll('door', 'gate'))
+
+console.log(announcement.replaceAll(/door/g, 'gate')) // REGULAR EXPRESSION (ALTERNATIVE TO replaceAll)
+
+//BOOLEANS
+
+const plane = 'Airbus A320neo'
+console.log(plane.includes('A320'))
+console.log(plane.includes('Boeing'))
+console.log(plane.startsWith('Air'))
+
+if(plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW airbus family')
+}
+if(plane.startsWith('Airbus') || plane.endsWith('neo')) {
+  console.log('Part of the NEW airbus family')
+}
+
+
+// Practice Exercise
+const checkBaggage = function(items) {
+  const baggage = items.toLowerCase();
+  if(baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed')
   } else {
-    console.log('You got lucky')
+    console.log('You are welcome')
   }
 }
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+  checkBaggage('I have a laptop, some Food, and a pocket Knife')
+  checkBaggage('Socks and camera')
+  checkBaggage('Got some snacks and a gun for protection')
+ 
+
+
+
+
+
+
+
+// // Working with strings
+
+// const airline = 'TAP Korean Air';
+// const plane = 'A320'
+
+// console.log(plane[0])
+// console.log(plane[1])
+// console.log(plane[2])
+// console.log('B737' [0])
+
+
+// console.log(airline.length);
+// console.log('B737'.length);
+
+// console.log(airline.indexOf('r'));    //starts from 0
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('korean'))
+// console.log(airline.slice(4))   //extraction starts from the 4th letter
+// console.log(airline.slice(4, 7))
+
+
+// console.log(airline.slice(0, airline.indexOf(' ')))
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+
+// const checkMiddleSeat = function(seat) {
+//   // B and E are middle seats
+//   const s = seat.slice(-1)
+//   if(s === 'B' || s === 'E') {
+//     console.log('You got the Middle seat')
+//   } else {
+//     console.log('You got lucky')
+//   }
+// }
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
 
 
 
