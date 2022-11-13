@@ -68,74 +68,102 @@ const restaurant = {
 
 
 
+// SPLIT and JOIN
+console.log('a+very+nice+string'.split('+'));
+console.log('Aleksey Kim'.split(' ')) // creates 1 array with 2 elements
 
-const airline = 'TAP Korean Air'
-
-console.log(airline.toUpperCase())
-console.log(airline.toLowerCase())
+const [firstName, lastName] = 'Aleksey Kim'.split(' ')  // DIVIDES ARRAYS
 
 
-//fixing typos
-const passenger = 'aLex'
-const passengerLower = passenger.toLowerCase()
-const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1)
-console.log(passengerCorrect);
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
+console.log(newName)
 
-// user input email comparingg
 
-const email = 'hello@alex.io';
-const logInEmail = 'Hello@Alex.Io \n';
+const capitalizedName = function(name) {
+  const names = name.split(' ')
+  const namesUpper = []
 
-// const lowerEmail = logInEmail.toLowerCase()
-// const trimmedEmail = lowerEmail.trim()
-// console.log(trimmedEmail)
+  for(const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1))  // Adds the first letter with the rest of the name
+    // namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+  }
+  console.log(namesUpper.join(' '))   // JOIN adds together the arrays
+}
+
+capitalizedName('jessica ann smith davis')
+capitalizedName('kim aleksey romanovich')
+
+
+
+// WORKING WITH STRING - PART 2
+
+// const airline = 'TAP Korean Air'
+
+// console.log(airline.toUpperCase())
+// console.log(airline.toLowerCase())
+
+
+// //fixing typos
+// const passenger = 'aLex'
+// const passengerLower = passenger.toLowerCase()
+// const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1)
+// console.log(passengerCorrect);
+
+// // user input email comparingg
+
+// const email = 'hello@alex.io';
+// const logInEmail = 'Hello@Alex.Io \n';
+
+// // const lowerEmail = logInEmail.toLowerCase()
+// // const trimmedEmail = lowerEmail.trim()
+// // console.log(trimmedEmail)
 
  
-const normalizedEmail = logInEmail.toLowerCase().trim();
-console.log(normalizedEmail)
-console.log(email === normalizedEmail);
+// const normalizedEmail = logInEmail.toLowerCase().trim();
+// console.log(normalizedEmail)
+// console.log(email === normalizedEmail);
 
 
 
-// REPLACING 
-const priceGB = '288,97#'
-const priceUS = priceGB.replace('#', '$').replace(',', '.')
-console.log(priceUS)
+// // REPLACING 
+// const priceGB = '288,97#'
+// const priceUS = priceGB.replace('#', '$').replace(',', '.')
+// console.log(priceUS)
 
 
-const announcement = 'All passengers come to boarding door 23. Boarding door 23';
-console.log(announcement.replace('door', 'gate'))
-console.log(announcement.replaceAll('door', 'gate'))
+// const announcement = 'All passengers come to boarding door 23. Boarding door 23';
+// console.log(announcement.replace('door', 'gate'))
+// console.log(announcement.replaceAll('door', 'gate'))
 
-console.log(announcement.replaceAll(/door/g, 'gate')) // REGULAR EXPRESSION (ALTERNATIVE TO replaceAll)
+// console.log(announcement.replaceAll(/door/g, 'gate')) // REGULAR EXPRESSION (ALTERNATIVE TO replaceAll)
 
-//BOOLEANS
+// //BOOLEANS
 
-const plane = 'Airbus A320neo'
-console.log(plane.includes('A320'))
-console.log(plane.includes('Boeing'))
-console.log(plane.startsWith('Air'))
+// const plane = 'Airbus A320neo'
+// console.log(plane.includes('A320'))
+// console.log(plane.includes('Boeing'))
+// console.log(plane.startsWith('Air'))
 
-if(plane.startsWith('Airbus') && plane.endsWith('neo')) {
-  console.log('Part of the NEW airbus family')
-}
-if(plane.startsWith('Airbus') || plane.endsWith('neo')) {
-  console.log('Part of the NEW airbus family')
-}
+// if(plane.startsWith('Airbus') && plane.endsWith('neo')) {
+//   console.log('Part of the NEW airbus family')
+// }
+// if(plane.startsWith('Airbus') || plane.endsWith('neo')) {
+//   console.log('Part of the NEW airbus family')
+// }
 
 
-// Practice Exercise
-const checkBaggage = function(items) {
-  const baggage = items.toLowerCase();
-  if(baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are not allowed')
-  } else {
-    console.log('You are welcome')
-  }
-}
-  checkBaggage('I have a laptop, some Food, and a pocket Knife')
-  checkBaggage('Socks and camera')
-  checkBaggage('Got some snacks and a gun for protection')
+// // Practice Exercise
+// const checkBaggage = function(items) {
+//   const baggage = items.toLowerCase();
+//   if(baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are not allowed')
+//   } else {
+//     console.log('You are welcome')
+//   }
+// }
+//   checkBaggage('I have a laptop, some Food, and a pocket Knife')
+//   checkBaggage('Socks and camera')
+//   checkBaggage('Got some snacks and a gun for protection')
  
 
 
