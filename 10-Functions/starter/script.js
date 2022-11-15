@@ -189,7 +189,6 @@ console.log(eurowings);
 book.call(lufthansa, 239, 'Mary Cooper')
 console.log(lufthansa)
 
-
 const swiss = {
         airline: 'Swiss Air Lines',
         iataCode: 'LX',
@@ -207,3 +206,81 @@ console.log(swiss)
 
 book.call(swiss, ...flightData)
 // console.log(swiss)
+
+lufthansa.book(333, 'you')
+
+book.call(eurowings, 33, 'Jerry')
+
+
+// BIND METHOD
+const bookEW = book.bind(eurowings);
+bookEW(321, 'Steven Simpson')
+
+const bookLX = book.bind(swiss);
+bookLX(333, 'Martha Wayne')
+
+const bookLH = book.bind(lufthansa);
+bookLH(1, 'Mr Nobody');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Aleksey Kim')
+
+
+
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function() {
+        console.log(this);
+
+        this.planes++;
+        console.log(this.planes);
+};
+// lufthansa.buyPlane()                         ADDS ANOTHER PLANE
+
+document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+//this is atteched to buy. this keyword is dynamic
+
+
+//Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(.1, 200));
+
+const addVAT = addTax.bind(null, .23);
+// addVAT = value => value + value * .23
+console.log(addVAT(100))
+console.log(addVAT(23))
+
+
+const addTax2 = function(rate) {
+        return function(value) {
+                // console.log(value + value * rate)
+                return value + value * rate
+        };
+};
+const addVAT2 = addTax2(0.23)
+// addVAT2(100)
+// addVAT2(23)
+
+console.log(addVAT2(100))
+console.log(addVAT2(23))
+
+
+
+
+// const greet = function(greeting) {
+        //     return function(name) {
+        //         console.log(`${greeting} ${name}`);
+        //     }
+        // }
+        
+        // const greet = greeting => name => 
+        //         console.log(`${greeting} ${name}`);
+            
+        
+        // const greeterHey = greet('Hey') ;// is a function now
+        // greeterHey('Alex');
+        // greeterHey('Jonas');
+        
+        
+        // greet('Hello')('Alex')
