@@ -150,137 +150,119 @@
 // greet('Hello')('Alex')
 
 
-const lufthansa = {
-        airline: 'Lufthansa',
-        iataCode: 'LH',
-        bookings: [],
-        // book: function() {}                  LEGACY
-        book(flightNum, name) {
-                console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-                );
-        this.bookings.push({flight: `${this.iataCode}${flightNum}`, name})
-        },
-};
-lufthansa.book(239, 'Aleksey Kim');
-lufthansa.book(635, 'John Smith');
+// const lufthansa = {
+//         airline: 'Lufthansa',
+//         iataCode: 'LH',
+//         bookings: [],
+//         // book: function() {}                  LEGACY
+//         book(flightNum, name) {
+//                 console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+//                 );
+//         this.bookings.push({flight: `${this.iataCode}${flightNum}`, name})
+//         },
+// };
+// lufthansa.book(239, 'Aleksey Kim');
+// lufthansa.book(635, 'John Smith');
 
 
-const eurowings = {
-        airline: 'Eurowings',
-        iataCode: 'EW',
-        bookings: [],
+// const eurowings = {
+//         airline: 'Eurowings',
+//         iataCode: 'EW',
+//         bookings: [],
 
 
-};
+// };
 
-const book = lufthansa.book;
-
-
-//DOESN NOT WORK
-// book(23, 'Sarah Conor');
+// const book = lufthansa.book;
 
 
-// CALL METHOD 
-
-book.call(eurowings, 23, 'Sarah Conor');
-console.log(eurowings);
+// //DOESN NOT WORK
+// // book(23, 'Sarah Conor');
 
 
-book.call(lufthansa, 239, 'Mary Cooper')
-console.log(lufthansa)
+// // CALL METHOD 
 
-const swiss = {
-        airline: 'Swiss Air Lines',
-        iataCode: 'LX',
-        bookings: [],
-}
-
-book.call(swiss, 71, 'Mary Cooper')
+// book.call(eurowings, 23, 'Sarah Conor');
+// console.log(eurowings);
 
 
-// APPLY METHOD
+// book.call(lufthansa, 239, 'Mary Cooper')
+// console.log(lufthansa)
 
-const flightData = [583, 'George Cooper'];
-book.apply(swiss, flightData);
-console.log(swiss)
+// const swiss = {
+//         airline: 'Swiss Air Lines',
+//         iataCode: 'LX',
+//         bookings: [],
+// }
 
-book.call(swiss, ...flightData)
+// book.call(swiss, 71, 'Mary Cooper')
+
+
+// // APPLY METHOD
+
+// const flightData = [583, 'George Cooper'];
+// book.apply(swiss, flightData);
 // console.log(swiss)
 
-lufthansa.book(333, 'you')
+// book.call(swiss, ...flightData)
+// // console.log(swiss)
 
-book.call(eurowings, 33, 'Jerry')
+// lufthansa.book(333, 'you')
 
-
-// BIND METHOD
-const bookEW = book.bind(eurowings);
-bookEW(321, 'Steven Simpson')
-
-const bookLX = book.bind(swiss);
-bookLX(333, 'Martha Wayne')
-
-const bookLH = book.bind(lufthansa);
-bookLH(1, 'Mr Nobody');
-
-const bookEW23 = book.bind(eurowings, 23);
-bookEW23('Aleksey Kim')
+// book.call(eurowings, 33, 'Jerry')
 
 
+// // BIND METHOD
+// const bookEW = book.bind(eurowings);
+// bookEW(321, 'Steven Simpson')
 
+// const bookLX = book.bind(swiss);
+// bookLX(333, 'Martha Wayne')
 
-// With Event Listeners
-lufthansa.planes = 300;
-lufthansa.buyPlane = function() {
-        console.log(this);
+// const bookLH = book.bind(lufthansa);
+// bookLH(1, 'Mr Nobody');
 
-        this.planes++;
-        console.log(this.planes);
-};
-// lufthansa.buyPlane()                         ADDS ANOTHER PLANE
-
-document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
-//this is atteched to buy. this keyword is dynamic
-
-
-//Partial application
-const addTax = (rate, value) => value + value * rate;
-console.log(addTax(.1, 200));
-
-const addVAT = addTax.bind(null, .23);
-// addVAT = value => value + value * .23
-console.log(addVAT(100))
-console.log(addVAT(23))
-
-
-const addTax2 = function(rate) {
-        return function(value) {
-                // console.log(value + value * rate)
-                return value + value * rate
-        };
-};
-const addVAT2 = addTax2(0.23)
-// addVAT2(100)
-// addVAT2(23)
-
-console.log(addVAT2(100))
-console.log(addVAT2(23))
+// const bookEW23 = book.bind(eurowings, 23);
+// bookEW23('Aleksey Kim')
 
 
 
 
-// const greet = function(greeting) {
-        //     return function(name) {
-        //         console.log(`${greeting} ${name}`);
-        //     }
-        // }
-        
-        // const greet = greeting => name => 
-        //         console.log(`${greeting} ${name}`);
-            
-        
-        // const greeterHey = greet('Hey') ;// is a function now
-        // greeterHey('Alex');
-        // greeterHey('Jonas');
-        
-        
-        // greet('Hello')('Alex')
+// // With Event Listeners
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function() {
+//         console.log(this);
+
+//         this.planes++;
+//         console.log(this.planes);
+// };
+// // lufthansa.buyPlane()                         ADDS ANOTHER PLANE
+
+// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// //this is atteched to buy. this keyword is dynamic
+
+
+// //Partial application
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(.1, 200));
+
+// const addVAT = addTax.bind(null, .23);
+// // addVAT = value => value + value * .23
+// console.log(addVAT(100))
+// console.log(addVAT(23))
+
+// Function returning a function
+// const addTax2 = function(rate) {
+//         return function(value) {
+//                 // console.log(value + value * rate)    Option1
+//                 return value + value * rate           //Option2
+//         };
+// };
+// const addVAT2 = addTax2(0.23)
+// // addVAT2(100)                 Option1
+// // addVAT2(23)                  Option1
+
+// console.log(addVAT2(100))     //Option2
+// console.log(addVAT2(23))      //Option2
+
+
