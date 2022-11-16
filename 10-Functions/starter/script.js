@@ -278,13 +278,14 @@ const poll = {
                 const answer = Number(prompt(`${this.question}\n${this.options.join('\n')}\n Write option number`)
                 );
                 console.log(answer)
-                
-        } 
-
-};
+  
 // REGISTER THE ANSWER
         typeof answer === 'number' && answer < this.answers.length && this.answers[answer]++;
         console.log(this.answers)
+                      
+        }, 
+
+};
 // poll.registerNewAnswer()
 
 document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll))
