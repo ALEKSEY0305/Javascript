@@ -96,19 +96,19 @@ console.log(arr)                //  ['a', 'b']
 
 
 
-// // REVERSE
-// arr = ['a', 'b', 'c', 'd', 'e'];               
-// const arr2 = ['j', 'i', 'h', 'g', 'f'];       
-// console.log(arr2.reverse());             //['f', 'g', 'h', 'i', 'j']
-// console.log(arr2)                         // REVERSE mutates the array
+// REVERSE
+arr = ['a', 'b', 'c', 'd', 'e'];               
+const arr2 = ['j', 'i', 'h', 'g', 'f'];       
+console.log(arr2.reverse());             //['f', 'g', 'h', 'i', 'j']
+console.log(arr2)                         // REVERSE mutates the array
 
 
-// // CONCAT       connects
-// const letters = arr.concat(arr2)      // specify in the brackets
-// console.log(letters)      //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-// console.log([...arr, ...arr2])  //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+// CONCAT       connects
+const letters = arr.concat(arr2)      // specify in the brackets
+console.log(letters)      //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+console.log([...arr, ...arr2])  //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
 
 
-// // JOIN
-// console.log(letters.join(' - '))    // a - b - c - d - e - f - g - h - i - j
+// JOIN
+console.log(letters.join(' - '))    // a - b - c - d - e - f - g - h - i - j
