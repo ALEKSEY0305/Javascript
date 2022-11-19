@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////'
 
@@ -117,15 +117,28 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // AT METHOD      ALSO WORKS ON STRINGS
 
-const arr = [23, 11, 64];
-console.log(arr[0]);  // 23
-console.log(arr.at(0)); //23
+// const arr = [23, 11, 64];
+// console.log(arr[0]);  // 23
+// console.log(arr.at(0)); //23
 
-// GETTING THE LAST ELEMENT
-console.log(arr[arr.length - 1]); // 64
-console.log(arr.slice(-1)[0])     // 64
-console.log(arr.at(-1))           // 64     
+// // GETTING THE LAST ELEMENT
+// console.log(arr[arr.length - 1]); // 64
+// console.log(arr.slice(-1)[0])     // 64
+// console.log(arr.at(-1))           // 64     
 
 
-console.log('alex'.at(0))
-console.log('alex'.at(-1))
+// console.log('alex'.at(0))
+// console.log('alex'.at(-1))
+
+
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const maxNum = function(arr) {
+  let max = arr[0]
+  for(let i = 0; i < arr.length; i++) {
+    const array = arr[i]
+    if(array > max) max = array;
+  } console.log(max)
+}
+maxNum(movements)
