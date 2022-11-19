@@ -132,13 +132,52 @@ const currencies = new Map([
 
 
 
+
+
+
+// const maxNum = function(arr) {
+//   let max = arr[0]
+//   for(let i = 0; i < arr.length; i++) {
+//     const array = arr[i]
+//     if(array > max) max = array;
+//   } console.log(max)
+// }
+// maxNum(movements)
+
+
+
+
+
+
+
+// for EACH method
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const maxNum = function(arr) {
-  let max = arr[0]
-  for(let i = 0; i < arr.length; i++) {
-    const array = arr[i]
-    if(array > max) max = array;
-  } console.log(max)
+// for (const movement of movements) {
+  for (const [i, movement] of movements.entries()){
+  if( movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else{
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`)
+  }
 }
-maxNum(movements)
+
+
+console.log('-----FOR EACH -----')   // can't break out of the loop
+
+
+movements.forEach(function(mov, i, arr) {    
+  if( mov > 0) {     // in forEach, the 1st el is the current el, the 2nd is the index 
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else{
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`)
+  }
+});
+
+// 0: function (200)
+// 1: function (450)
+// 2: function (-400)
+// 3: function (3000)
+// 4: function (-650)
+// 5: function (-130)
