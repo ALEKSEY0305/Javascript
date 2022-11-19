@@ -75,40 +75,57 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////'
 
-let arr = ['a', 'b', 'c', 'd', 'e']
-// SLICE
-console.log(arr.slice(2))    //starts from 2  ['c', 'd', 'e']
-console.log(arr.slice(2, 4))    //doesn't include the last one(4) ['c', 'd']
-console.log(arr.slice(-2))    //  ['d', 'e']
-console.log(arr.slice(-1))    //  ['e']
-console.log(arr.slice(1, -2))   //    ['b', 'c']
-console.log(arr.slice())    //      ['a', 'b', 'c', 'd', 'e']
-console.log([...arr])       //      ['a', 'b', 'c', 'd', 'e']
+// let arr = ['a', 'b', 'c', 'd', 'e']
+// // SLICE
+// console.log(arr.slice(2))    //starts from 2  ['c', 'd', 'e']
+// console.log(arr.slice(2, 4))    //doesn't include the last one(4) ['c', 'd']
+// console.log(arr.slice(-2))    //  ['d', 'e']
+// console.log(arr.slice(-1))    //  ['e']
+// console.log(arr.slice(1, -2))   //    ['b', 'c']
+// console.log(arr.slice())    //      ['a', 'b', 'c', 'd', 'e']
+// console.log([...arr])       //      ['a', 'b', 'c', 'd', 'e']
 
 
-// SPLICE       CHANGES THE ORIGINAL ARRAY (MUTATES)
-// console.log(arr.splice(2))      //  ['c', 'd', 'e']
-arr.splice(-1)                   //['a', 'b', 'c', 'd']
-arr.splice(1, 2)              //includes the 2nd     // ['a', 'd']
-console.log(arr)                //  ['a', 'b']
-
-
-
-
-
-// REVERSE
-arr = ['a', 'b', 'c', 'd', 'e'];               
-const arr2 = ['j', 'i', 'h', 'g', 'f'];       
-console.log(arr2.reverse());             //['f', 'g', 'h', 'i', 'j']
-console.log(arr2)                         // REVERSE mutates the array
-
-
-// CONCAT       connects
-const letters = arr.concat(arr2)      // specify in the brackets
-console.log(letters)      //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-console.log([...arr, ...arr2])  //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+// // SPLICE       CHANGES THE ORIGINAL ARRAY (MUTATES)
+// // console.log(arr.splice(2))      //  ['c', 'd', 'e']
+// arr.splice(-1)                   //['a', 'b', 'c', 'd']
+// arr.splice(1, 2)              //includes the 2nd     // ['a', 'd']
+// console.log(arr)                //  ['a', 'b']
 
 
 
-// JOIN
-console.log(letters.join(' - '))    // a - b - c - d - e - f - g - h - i - j
+
+
+// // REVERSE
+// arr = ['a', 'b', 'c', 'd', 'e'];               
+// const arr2 = ['j', 'i', 'h', 'g', 'f'];       
+// console.log(arr2.reverse());             //['f', 'g', 'h', 'i', 'j']
+// console.log(arr2)                         // REVERSE mutates the array
+
+
+// // CONCAT       connects
+// const letters = arr.concat(arr2)      // specify in the brackets
+// console.log(letters)      //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+// console.log([...arr, ...arr2])  //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+
+
+// // JOIN
+// console.log(letters.join(' - '))    // a - b - c - d - e - f - g - h - i - j
+
+
+
+// AT METHOD      ALSO WORKS ON STRINGS
+
+const arr = [23, 11, 64];
+console.log(arr[0]);  // 23
+console.log(arr.at(0)); //23
+
+// GETTING THE LAST ELEMENT
+console.log(arr[arr.length - 1]); // 64
+console.log(arr.slice(-1)[0])     // 64
+console.log(arr.at(-1))           // 64     
+
+
+console.log('alex'.at(0))
+console.log('alex'.at(-1))
