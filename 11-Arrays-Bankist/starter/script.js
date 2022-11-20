@@ -63,6 +63,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 
 const displayMovements = function(movements){
+  containerMovements.innerHTML = ''       // textContent returns only text, innerHTML return everything in the HTML
   movements.forEach(function( mov, i){
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -75,6 +76,48 @@ const displayMovements = function(movements){
   });
 }
 displayMovements(account1.movements)
+// console.log(containerMovements.innerHTML)
+
+
+// const checkDogs = function() {
+//   const dogsJulia = [3, 5, 2, 12, 7];
+//   const dogsKate = [4, 1, 15, 8, 3];
+//   const  correctedDogsJulia = dogsJulia.slice(2,3)
+//   // movements.forEach(function(mov, i, arr) {    
+//     //   if( mov > 0) {     // in forEach, the 1st el is the current el, the 2nd is the index 
+//     //     console.log(`Movement ${i + 1}: You deposited ${mov}`);
+//     //   } else{
+//     //     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`)
+//     //   }
+//     // });
+  
+// }
+// checkDogs()
+const checkDogs = function(dogsJulia, dogsKate) {
+  // const correctedDogsJulia = dogsJulia.slice(1,3);   is okay, but slice is also good
+  const correctedDogsJulia = dogsJulia.slice();
+  correctedDogsJulia.splice(0, 1);
+  correctedDogsJulia.splice(-2);
+  console.log(correctedDogsJulia)
+  const allDogs = correctedDogsJulia.concat(dogsKate)
+  // const allDogs= [...correctedDogsJulia, ...dogsKate]
+  console.log(allDogs)
+  allDogs.forEach(function(dog, i) {
+    if (dog >= 3) {
+      console.log(`Dog number ${i + 1} is an adult 🦮, and is ${dog} year(s) old`)
+    } else {
+      console.log(`Dog number ${i + 1} is a puppy 🐶, and is ${dog} year(s) old`)
+    }
+  })
+};
+
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3])
+
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4])
+
+
+//CHALLENGE 1
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
