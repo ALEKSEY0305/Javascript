@@ -61,6 +61,7 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
+
 const displayMovements = function(movements){
   containerMovements.innerHTML = ''       // textContent returns only text, innerHTML return everything in the HTML
   movements.forEach(function( mov, i){
@@ -77,9 +78,14 @@ const displayMovements = function(movements){
 displayMovements(account1.movements)
 // console.log(containerMovements.innerHTML)
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements)
 
+const deposits = movements.filter(mov => mov > 0);
+console.log(deposits)
 
-// 
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals)
 
 
 
@@ -285,7 +291,7 @@ displayMovements(account1.movements)
 
 // MAP, FILTER, REDUCE
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // // the map method
@@ -353,23 +359,30 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // FILTER METHOD
 
 
-const deposits = movements.filter(function(mov){
-  return mov > 0;
-})
 
-const withdrawals = movements.filter(function(mov){
-  return mov < 0;
-})
-console.log(movements)
-console.log(deposits)
-console.log(withdrawals)
+// const deposits = movements.filter(function(mov){
+//   return mov > 0;
+// })
+
+// const withdrawals = movements.filter(function(mov){
+//   return mov < 0;
+// })
+// console.log(movements)
+// console.log(deposits)
+// console.log(withdrawals)
+
+// const deposits = movements.filter(mov => mov > 0);
+// console.log(deposits)
+
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals)
 
 
-const depositsFor = []
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor)
+// const depositsFor = []
+// for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+// console.log(depositsFor)
 
 
-const withdrawalsFor = []
-for (const mov of movements) if(mov < 0) withdrawalsFor.push(mov);
-console.log(withdrawalsFor)
+// const withdrawalsFor = []
+// for (const mov of movements) if(mov < 0) withdrawalsFor.push(mov);
+// console.log(withdrawalsFor)
