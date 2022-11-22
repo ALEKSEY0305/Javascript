@@ -79,31 +79,7 @@ displayMovements(account1.movements)
 
 
 
-const user = 'Steven Thomas Williams'; // stw
-
-
-// const user = 'Steven Thomas Williams'; // stw
-// const username = user
-// .toLowerCase()
-// .split(' ')
-// .map(function(name) {
-//   return name[0]
-// }).join('')
-  
-const createUsernames = function(accs) {
-accs.forEach(function (acc) {
-  acc.username = acc.owner
-  .toLowerCase()
-  .split(' ')
-  .map(name => name[0])
-  .join('');
-})
-}
-// console.log(createUsernames(user));
-// console.log(createUsernames('Steven Thomas Williams'));
-
-createUsernames(accounts);
-console.log(accounts)
+// 
 
 
 
@@ -309,7 +285,7 @@ console.log(accounts)
 
 // MAP, FILTER, REDUCE
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // // the map method
@@ -340,3 +316,60 @@ console.log(accounts)
 
 
 // COMPUTING USERNAMES
+
+
+
+
+/// PRACTICE
+// const user = 'Steven Thomas Williams'; // stw
+
+
+// // const user = 'Steven Thomas Williams'; // stw
+// // const username = user
+// // .toLowerCase()
+// // .split(' ')
+// // .map(function(name) {
+// //   return name[0]
+// // }).join('')
+  
+// const createUsernames = function(accs) {
+// accs.forEach(function (acc) {
+//   acc.username = acc.owner
+//   .toLowerCase()
+//   .split(' ')
+//   .map(name => name[0])
+//   .join('');
+// })
+// }
+// // console.log(createUsernames(user));
+// // console.log(createUsernames('Steven Thomas Williams'));
+
+// createUsernames(accounts);
+// console.log(accounts)
+
+
+
+
+// FILTER METHOD
+
+
+const deposits = movements.filter(function(mov){
+  return mov > 0;
+})
+
+const withdrawals = movements.filter(function(mov){
+  return mov < 0;
+})
+console.log(movements)
+console.log(deposits)
+console.log(withdrawals)
+
+
+const depositsFor = []
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor)
+
+
+const withdrawalsFor = []
+for (const mov of movements) if(mov < 0) withdrawalsFor.push(mov);
+console.log(withdrawalsFor)
