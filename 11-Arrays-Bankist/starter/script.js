@@ -134,6 +134,26 @@ const createUsernames = function(accs) {
   createUsernames(accounts);
   console.log(accounts)
 
+// MAXIMUM VALUE
+
+const max = movements.reduce((acc, mov) => {
+  if(acc > mov)
+    return acc;
+  else return mov;
+}, movements[0])
+console.log(max)
+
+const max1 = function(arr) {
+  let maximum = arr[0]
+  for(let i = 0; i < arr.length; i++) {
+    const array = arr[i]
+    if(array > maximum) maximum = array;
+  } console.log(maximum)
+}
+max1(movements)
+
+
+
 
 // const checkDogs = function() {
 //   const dogsJulia = [3, 5, 2, 12, 7];
