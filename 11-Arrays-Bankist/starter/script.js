@@ -75,24 +75,64 @@ const displayMovements = function(movements){
       containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 }
-displayMovements(account1.movements)
+displayMovements(account1.movements);
+
+const calcPringBalance = function(movements) {
+  const balance = movement.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balamce} EUR`;
+};
+
 // console.log(containerMovements.innerHTML)
 
+
+// FILTER METHOD
+// // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// // console.log(movements)
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// console.log(movements)
+
+// const deposits = movements.filter(mov => mov > 0);
+// console.log(deposits)
+
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals)
+
+
+
+
+
+//REDUCE METHOD
 console.log(movements)
+// accumulator is like a SNOWBALL
+// const balance = movements.reduce(function(acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`)
+//   return acc + cur;
+// }, 0)
+// console.log(balance)
 
-const deposits = movements.filter(mov => mov > 0);
-console.log(deposits)
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance)
 
-const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals)
-
-
-
-
+let balance2 = 0;
+for( const mov of movements) balance2 += mov;
+console.log(balance2)
+displayMovements(account1.movements);
 
 
 
+const createUsernames = function(accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  })
+  }
+
+  
+  createUsernames(accounts);
+  console.log(accounts)
 
 
 // const checkDogs = function() {
@@ -338,20 +378,12 @@ console.log(withdrawals)
 // //   return name[0]
 // // }).join('')
   
-// const createUsernames = function(accs) {
-// accs.forEach(function (acc) {
-//   acc.username = acc.owner
-//   .toLowerCase()
-//   .split(' ')
-//   .map(name => name[0])
-//   .join('');
-// })
-// }
-// // console.log(createUsernames(user));
-// // console.log(createUsernames('Steven Thomas Williams'));
 
-// createUsernames(accounts);
-// console.log(accounts)
+// console.log(createUsernames(user));
+// console.log(createUsernames('Steven Thomas Williams'));
+
+
+
 
 
 
