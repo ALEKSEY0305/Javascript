@@ -78,8 +78,8 @@ const displayMovements = function(movements){
 displayMovements(account1.movements);
 
 const calcPringBalance = function(movements) {
-  const balance = movement.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balamce} EUR`;
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
 };
 
 // console.log(containerMovements.innerHTML)
@@ -101,56 +101,77 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 
+
+
 //REDUCE METHOD
-console.log(movements)
-// accumulator is like a SNOWBALL
+// console.log(movements)
+// // accumulator is like a SNOWBALL
 // const balance = movements.reduce(function(acc, cur, i, arr) {
 //   console.log(`Iteration ${i}: ${acc}`)
 //   return acc + cur;
 // }, 0)
 // console.log(balance)
 
-const balance = movements.reduce((acc, cur) => acc + cur, 0);
-console.log(balance)
+// // const balance = movements.reduce((acc, cur) => acc + cur, 0);
+// // console.log(balance)
 
-let balance2 = 0;
-for( const mov of movements) balance2 += mov;
-console.log(balance2)
-displayMovements(account1.movements);
+// let balance2 = 0;
+// for( const mov of movements) balance2 += mov;
+// console.log(balance2)
+// displayMovements(account1.movements);
 
 
 
-const createUsernames = function(accs) {
-  accs.forEach(function (acc) {
-    acc.username = acc.owner
-    .toLowerCase()
-    .split(' ')
-    .map(name => name[0])
-    .join('');
-  })
-  }
+// const createUsernames = function(accs) {
+//   accs.forEach(function (acc) {
+//     acc.username = acc.owner
+//     .toLowerCase()
+//     .split(' ')
+//     .map(name => name[0])
+//     .join('');
+//   })
+//   }
 
   
-  createUsernames(accounts);
-  console.log(accounts)
+//   createUsernames(accounts);
+//   console.log(accounts)
 
-// MAXIMUM VALUE
 
-const max = movements.reduce((acc, mov) => {
-  if(acc > mov)
-    return acc;
-  else return mov;
-}, movements[0])
-console.log(max)
 
-const max1 = function(arr) {
-  let maximum = arr[0]
-  for(let i = 0; i < arr.length; i++) {
-    const array = arr[i]
-    if(array > maximum) maximum = array;
-  } console.log(maximum)
-}
-max1(movements)
+
+
+
+
+
+
+
+
+
+  
+// // MAXIMUM VALUE
+
+// const max = movements.reduce((acc, mov) => {
+//   if(acc > mov)
+//     return acc;
+//   else return mov;
+// }, movements[0])
+// console.log(max)
+
+
+// SAME AS
+// const max1 = function(arr) {
+//   let maximum = arr[0]
+//   for(let i = 0; i < arr.length; i++) {
+//     const array = arr[i]
+//     if(array > maximum) maximum = array;
+//   } console.log(maximum)
+// }
+// max1(movements)
+
+
+
+
+
 
 
 
