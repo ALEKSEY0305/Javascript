@@ -179,12 +179,21 @@ const createUsernames = function(accs) {
 
 
 
+const firstWithdrawal = movements.find(mov => mov < 0)
+console.log(movements);
+console.log(firstWithdrawal);
 
 
+console.log(accounts);
 
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account)
 
-
-
+for (const accounts of account){
+  if (accounts.owner === 'Jessica Davis'){
+    console.log(...accounts.owner)
+  }
+}
 
 
 
@@ -556,39 +565,39 @@ const createUsernames = function(accs) {
 
 
 
-// OPTION 1
-const calcAverageHumanAge = function(ages) {
-  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
-  // console.log(humanAges)
-  const adults = humanAges.filter(age => age >= 18)
-  console.log(adults)
-  const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
-  return `The average age is ${average}`
-}
-const average1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
-console.log(average1)
+// // OPTION 1
+// const calcAverageHumanAge = function(ages) {
+//   const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+//   // console.log(humanAges)
+//   const adults = humanAges.filter(age => age >= 18)
+//   console.log(adults)
+//   const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+//   return `The average age is ${average}`
+// }
+// const average1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
+// console.log(average1)
 
 
-const average2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
-console.log(average2)
-
-
-
+// const average2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+// console.log(average2)
 
 
 
-// OPTION 2
-
-const calcAverageHumanAge1 = ages1 =>
-  ages1
-    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
-    .filter(age => age >= 18)
-    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
-// return `The average age is ${average1}`;
-// RETURN is not necessary
 
 
-const average11 = calcAverageHumanAge1([5, 2, 4, 1, 15, 8, 3])
-const average22 = calcAverageHumanAge1([16, 6, 10, 5, 6, 1, 4])
 
-console.log(average11, average22)
+// // OPTION 2
+
+// const calcAverageHumanAge1 = ages1 =>
+//   ages1
+//     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+//     .filter(age => age >= 18)
+//     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+// // return `The average age is ${average1}`;
+// // RETURN is not necessary
+
+
+// const average11 = calcAverageHumanAge1([5, 2, 4, 1, 15, 8, 3])
+// const average22 = calcAverageHumanAge1([16, 6, 10, 5, 6, 1, 4])
+
+// console.log(average11, average22)
