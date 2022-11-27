@@ -5,14 +5,14 @@
 
 // Data
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Aleksey Kim',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Gahyun Kil',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -82,7 +82,7 @@ const calcDisplayBalance = function(movements) {
     .reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} €`;
 };
-calcDisplayBalance((account1.movements))
+// calcDisplayBalance((account1.movements))
 
 
 // const calcDisplayBalance = function (acc) {
@@ -141,7 +141,7 @@ const calcDisplaySummary = function(movements) {
 
 
 }
-calcDisplaySummary(account1.movements)
+// calcDisplaySummary(account1.movements)
 
 
 //REDUCE METHOD
@@ -189,11 +189,28 @@ btnLogin.addEventListener('click', function (e) {
   console.log(currentAccount);
 
   // if(currentAccount.pin === Number(inputLoginPin.value)) {
-  //   console.log('LOGIN');
+    console.log('currentAccount');
   // }
   if(currentAccount?.pin === Number(inputLoginPin.value)) {
-    //Display UI and welcome message
-    console.log('LOGIN');
+    // console.log('LOGIN');
+
+    // Display UI and welcome message
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+    containerApp.style.opacity = 100;
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = ''; //assignment operator works from right to left
+    inputLoginPin.blur();
+
+
+    // Display movements
+    displayMovements(currentAccount.movements);
+
+    // Display balance
+    calcDisplayBalance(currentAccount.movements);
+
+    // Display summary
+    calcDisplaySummary(currentAccount.movements);
   }
 });
 // const firstWithdrawal = movements.find(mov => mov < 0)
