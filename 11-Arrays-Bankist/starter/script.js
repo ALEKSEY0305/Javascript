@@ -483,6 +483,7 @@ const createUsernames = function(accs) {
 
 
 
+// CHALLENGE 1
 
 
 
@@ -499,8 +500,6 @@ const createUsernames = function(accs) {
 //     // });
   
 // }
-
-//CHALLENGE 1
 
 // // checkDogs()
 // const checkDogs = function(dogsJulia, dogsKate) {
