@@ -100,10 +100,10 @@ calcDisplayBalance((account1.movements))
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(movements)
 
-// const deposits = movements.filter(mov => mov > 0);
+const deposits = movements.filter(mov => mov > 0);
 // console.log(deposits)
 
-// const withdrawals = movements.filter(mov => mov < 0);
+const withdrawals = movements.filter(mov => mov < 0);
 // console.log(withdrawals)
 
 const eurToUsd = 1.1;
@@ -114,7 +114,7 @@ const totalDepositsUSD = movements
   .map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsUSD)
+// console.log(totalDepositsUSD)
 
 
 const calcDisplaySummary = function(movements) {
@@ -177,23 +177,60 @@ const createUsernames = function(accs) {
   createUsernames(accounts);
   // console.log(accounts)
 
+// Event handler
+let currentAccount;
 
+btnLogin.addEventListener('click', function (e) {
+  //Prevent form from submitting
+  e.preventDefault();
+  // console.log('LOGIN')
 
-const firstWithdrawal = movements.find(mov => mov < 0)
-console.log(movements);
-console.log(firstWithdrawal);
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
 
-
-console.log(accounts);
-
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account)
-
-for (const accounts of account){
-  if (accounts.owner === 'Jessica Davis'){
-    console.log(...accounts.owner)
+  // if(currentAccount.pin === Number(inputLoginPin.value)) {
+  //   console.log('LOGIN');
+  // }
+  if(currentAccount?.pin === Number(inputLoginPin.value)) {
+    //Display UI and welcome message
+    console.log('LOGIN');
   }
-}
+});
+// const firstWithdrawal = movements.find(mov => mov < 0)
+// console.log(movements);
+// console.log(firstWithdrawal);
+
+
+// console.log(accounts);
+
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account)
+
+
+
+
+
+
+
+
+
+
+// CODE REVIEW
+// for (const accounts of account){
+//   if (accounts.owner === 'Jessica Davis'){
+//     console.log(...accounts.owner)
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
 
 
 
