@@ -624,29 +624,73 @@ btnClose.addEventListener('click', function(e){
 
 // FLAT and FLAT MAP
 
-const arr = [[1, 2, 3], [4, 5, 6], 7 , 8];
-console.log(arr.flat())   //DEPTH
+// const arr = [[1, 2, 3], [4, 5, 6], 7 , 8];
+// console.log(arr.flat())   //DEPTH
 
-const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
-console.log(arrDeep.flat(2))    // DEPTH
+// const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+// console.log(arrDeep.flat(2))    // DEPTH
 
 
-const accountMovements = accounts.map(acc => acc.movements);
-console.log(accountMovements);
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
 
-const allMovements = accountMovements.flat();
-console.log(allMovements);
-const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalance);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overallBalance);
 
-const overalbalance = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overalbalance);
+// const overalbalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalbalance);
 
-const trueBalance = accounts.flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
-console.log(trueBalance)
+// const trueBalance = accounts.flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
+// console.log(trueBalance)
+
+
+// SORTING ARRAYS
+// strings
+const owners = ['Alex', 'Zach', 'Adam', 'Martha'];
+// console.log(owners.sort());
+console.log(owners)
+
+owners.sort((a, b) => {
+  if( a > b) return 1;
+  if( a < b) return -1;
+})
+
+// owners.sort((a, b) => a - b);
+console.log(owners)
+
+
+// numbers
+console.log(movements)
+
+
+// return < 0 ? a, b (keep order)
+// return > 0 ? b, a (switch order)
+
+// Ascending
+// movements.sort((a, b) => {
+//   if(a > b) return 1;
+//   if(a < b) return -1;
+// });
+
+movements.sort((a, b) => a - b);
+console.log(movements)
+
+// Descending
+// movements.sort((a, b) => {
+//   if(a > b) return -1;
+//   if(a < b) return 1;
+// });
+
+movements.sort((a, b) => b - a);
+
+console.log(movements)
+
+
 // CHALLENGE 1
 
 
