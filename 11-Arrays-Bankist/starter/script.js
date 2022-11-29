@@ -244,6 +244,19 @@ btnTransfer.addEventListener('click', function(e) {
 });
 
 
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const amount = Number (inputLoanAmount.value)
+  if ( amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount)
+  }
+  inputLoanAmount.value = '';
+})
 
 btnClose.addEventListener('click', function(e){
   e.preventDefault();
@@ -581,22 +594,31 @@ btnClose.addEventListener('click', function(e){
 
 
 
+console.log(movements);
 
 
+// EQUALITY
+console.log(movements.includes(-130));  //true
 
 
+// SOME: CONDITION
+
+console.log(movements.some(move => move === -130))    //true
+
+const anyDeposits = movements.some(mov => mov > 1500);  // true
+console.log(anyDeposits);
 
 
+// EVERY: CONDITION
 
+console.log(movements.every(mov => mov > 0))    // false
+console.log(account4.movements.every(mov => mov > 0)) //true
 
-
-
-
-
-
-
-
-
+// SEPARATE CALLBACK
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit))
+console.log(movements.every(deposit))
+console.log(movements.filter(deposit))
 
 
 // CHALLENGE 1
