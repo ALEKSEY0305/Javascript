@@ -75,7 +75,7 @@ const displayMovements = function(movements, sort = false) {
     <div class="movements__row">
       <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
       <div class="movements__value">${mov}€</div>
-      </div>`
+      </div>`;
       containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 }
@@ -660,22 +660,22 @@ btnSort.addEventListener('click', function(e) {
 
 
 // SORTING ARRAYS
-// strings
-const owners = ['Alex', 'Zach', 'Adam', 'Martha'];
-// console.log(owners.sort());
-console.log(owners)
+// // strings
+// const owners = ['Alex', 'Zach', 'Adam', 'Martha'];
+// // console.log(owners.sort());
+// console.log(owners)
 
-owners.sort((a, b) => {
-  if( a > b) return 1;
-  if( a < b) return -1;
-})
+// owners.sort((a, b) => {
+//   if( a > b) return 1;
+//   if( a < b) return -1;
+// })
 
-// owners.sort((a, b) => a - b);
-console.log(owners)
+// // owners.sort((a, b) => a - b);
+// console.log(owners)
 
 
-// numbers
-console.log(movements)
+// // numbers
+// console.log(movements)
 
 
 // return < 0 ? a, b (keep order)
@@ -687,21 +687,21 @@ console.log(movements)
 //   if(a < b) return -1;
 // });
 
-movements.sort((a, b) => a - b);
-console.log(movements)
+// movements.sort((a, b) => a - b);
+// console.log(movements)
 
-// Descending
-// movements.sort((a, b) => {
-//   if(a > b) return -1;
-//   if(a < b) return 1;
-// });
+// // Descending
+// // movements.sort((a, b) => {
+// //   if(a > b) return -1;
+// //   if(a < b) return 1;
+// // });
 
-movements.sort((a, b) => b - a);
+// movements.sort((a, b) => b - a);
 
-console.log(movements)
+// console.log(movements)
 
 
-// CHALLENGE 1
+// // CHALLENGE 1
 
 
 
@@ -851,3 +851,47 @@ console.log(movements)
 // };
 
 // console.log(twoSum([2, 7, 11, 15], 9));
+
+
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty arrays + fill method
+const x = new Array(7);
+console.log(x);
+// console.log(x.map(() => 5))
+// x.fill(1);
+
+x.fill(1, 3, 6);
+arr.fill(1, 0, 4);
+console.log(arr)
+
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+
+// Array.from
+const y = Array.from({length: 7}, () => 1);
+console.log(y);
+
+const z = Array.from({length: 7}, (_, i) => i + 1);
+console.log(z);
+
+const w = Array.from({length: 100}, (_, i) => i + 1);
+console.log(w);
+
+// const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+// console.log(movementsUI)
+
+
+labelBalance.addEventListener('click', function() {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
+  );
+
+  console.log(movementsUI);
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')]
+  console.log(movementsUI2)
+});
