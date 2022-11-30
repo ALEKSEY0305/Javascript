@@ -854,44 +854,61 @@ btnSort.addEventListener('click', function(e) {
 
 
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
-console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+// Create a new array
 
-// Empty arrays + fill method
-const x = new Array(7);
-console.log(x);
-// console.log(x.map(() => 5))
-// x.fill(1);
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
-x.fill(1, 3, 6);
-arr.fill(1, 0, 4);
-console.log(arr)
+// // Empty arrays + fill method
+// const x = new Array(7);
+// console.log(x);
+// // console.log(x.map(() => 5))
+// // x.fill(1);
 
-console.log(x);
+// x.fill(1, 3, 6);
+// arr.fill(1, 0, 4);
+// console.log(arr)
 
-arr.fill(23, 2, 6);
-console.log(arr);
+// console.log(x);
+
+// arr.fill(23, 2, 6);
+// console.log(arr);
 
 
-// Array.from
-const y = Array.from({length: 7}, () => 1);
-console.log(y);
+// // Array.from
+// const y = Array.from({length: 7}, () => 1);
+// console.log(y);
 
-const z = Array.from({length: 7}, (_, i) => i + 1);
-console.log(z);
+// const z = Array.from({length: 7}, (_, i) => i + 1);
+// console.log(z);
 
-const w = Array.from({length: 100}, (_, i) => i + 1);
-console.log(w);
+// const w = Array.from({length: 100}, (_, i) => i + 1);
+// console.log(w);
 
 // const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
 // console.log(movementsUI)
 
 
-labelBalance.addEventListener('click', function() {
-  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
-  );
+// labelBalance.addEventListener('click', function() {
+//   const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
+//   );
 
-  console.log(movementsUI);
-  const movementsUI2 = [...document.querySelectorAll('.movements__value')]
-  console.log(movementsUI2)
-});
+//   console.log(movementsUI);
+//   const movementsUI2 = [...document.querySelectorAll('.movements__value')]
+//   console.log(movementsUI2)
+// });
+
+const free = Array.from({length: 11}, (_, i) => i + 1);
+console.log(free)
+
+
+const num = [1, 2414, 4, 3232, 56, 7, 87];
+
+const findBig = function(arr) {
+  let max = arr[0];
+  for(let i = 0; i < arr.length; i++) {
+    const array = arr[i]
+    if(array > max) max = array;
+  } console.log(max)
+}
+findBig(num);
