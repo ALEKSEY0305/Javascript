@@ -903,22 +903,22 @@ btnSort.addEventListener('click', function(e) {
 
 // Practice Reduce nd filter 
 
-const free = Array.from({length: 11}, (_, i) => i + 1);
-console.log(free)
+// const free = Array.from({length: 11}, (_, i) => ++i);
+// console.log(free)
 
-const sum = free.reduce((acc, num) => acc + num);
-console.log(sum)
+// const sum = free.reduce((acc, num) => acc + num);
+// console.log(sum)
 
 
-const big = Array.from({length: 1000}, (_, i) => i + 1)
-console.log(big)
+// const big = Array.from({length: 1000}, (_, i) => i + 1)
+// console.log(big)
 
-const ming = big.reduce((acc, num) => acc + num);
-console.log(ming)
-const even = big.filter((num) => num % 2 === 0);
-console.log(even)
-const besh = even.reduce((acc, num) => acc + num);
-console.log(besh)
+// const ming = big.reduce((acc, num) => acc + num);
+// console.log(ming)
+// const even = big.filter((num) => num % 2 === 0);
+// console.log(even)
+// const besh = even.reduce((acc, num) => acc + num);
+// console.log(besh)
 
 
 
@@ -934,6 +934,40 @@ console.log(besh)
 // findBig(num);
 
 
+// 1.
+const banckDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((acc, num) => acc + num, 0);
 
-const banckDepositSum = accounts.map(acc => acc.movements);
 console.log(banckDepositSum)
+
+
+
+
+const banckDepositSum1 = accounts.map(acc => acc.movements);
+console.log(banckDepositSum1)  //[Array(8), Array(8), Array(8), Array(5)]
+
+
+
+
+// const banckDepositSum2 = accounts.map(acc => acc.movements).flat();
+// console.log(banckDepositSum2); //[200, 450, -400, 3000, -650, -130, 70, 1300, 5000, 3400, -150, -790, -3210, -1000, 8500, -30, 200, -200, 340, -300, -20, 50, 400, -460, 430, 1000, 700, 50, 90]
+
+
+
+// 2. 
+  
+  const numDeposits1000 = accounts
+    .flatMap(acc => acc.movements)
+    // .reduce((acc, num) => acc + num, 0)
+    // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count) , 0);
+    .reduce((count, cur) => (cur >= 1000 ? ++count : count) , 0);
+
+    // .filter(mov => mov >= 1000).length;
+
+  console.log(numDeposits1000);
+
+  let a = 10;
+  console.log(++a)
+  console.log(a)
