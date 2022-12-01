@@ -898,17 +898,42 @@ btnSort.addEventListener('click', function(e) {
 //   console.log(movementsUI2)
 // });
 
+
+
+
+// Practice Reduce nd filter 
+
 const free = Array.from({length: 11}, (_, i) => i + 1);
 console.log(free)
 
+const sum = free.reduce((acc, num) => acc + num);
+console.log(sum)
 
-const num = [1, 2414, 4, 3232, 56, 7, 87];
 
-const findBig = function(arr) {
-  let max = arr[0];
-  for(let i = 0; i < arr.length; i++) {
-    const array = arr[i]
-    if(array > max) max = array;
-  } console.log(max)
-}
-findBig(num);
+const big = Array.from({length: 1000}, (_, i) => i + 1)
+console.log(big)
+
+const ming = big.reduce((acc, num) => acc + num);
+console.log(ming)
+const even = big.filter((num) => num % 2 === 0);
+console.log(even)
+const besh = even.reduce((acc, num) => acc + num);
+console.log(besh)
+
+
+
+// const num = [1, 2414, 4, 3232, 56, 7, 87];
+
+// const findBig = function(arr) {
+//   let max = arr[0];
+//   for(let i = 0; i < arr.length; i++) {
+//     const array = arr[i]
+//     if(array > max) max = array;
+//   } console.log(max)
+// }
+// findBig(num);
+
+
+
+const banckDepositSum = accounts.map(acc => acc.movements);
+console.log(banckDepositSum)
