@@ -934,19 +934,28 @@ btnSort.addEventListener('click', function(e) {
 // findBig(num);
 
 
+
+
+
+
+
+
+
+
+
 // 1.
-const banckDepositSum = accounts
-  .flatMap(acc => acc.movements)
-  .filter(mov => mov > 0)
-  .reduce((acc, num) => acc + num, 0);
+// const banckDepositSum = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov > 0)
+//   .reduce((acc, num) => acc + num, 0);
 
-console.log(banckDepositSum)
-
-
+// console.log(banckDepositSum)
 
 
-const banckDepositSum1 = accounts.map(acc => acc.movements);
-console.log(banckDepositSum1)  //[Array(8), Array(8), Array(8), Array(5)]
+
+
+// const banckDepositSum1 = accounts.map(acc => acc.movements);
+// console.log(banckDepositSum1)  //[Array(8), Array(8), Array(8), Array(5)]
 
 
 
@@ -956,18 +965,49 @@ console.log(banckDepositSum1)  //[Array(8), Array(8), Array(8), Array(5)]
 
 
 
+
+
+
+
+
+
+
 // 2. 
   
-  const numDeposits1000 = accounts
+  // const numDeposits1000 = accounts
+  //   .flatMap(acc => acc.movements)
+  //   // .reduce((acc, num) => acc + num, 0)
+  //   // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count) , 0);
+  //   .reduce((count, cur) => (cur >= 1000 ? ++count : count) , 0);
+
+  //   // .filter(mov => mov >= 1000).length;
+
+  // console.log(numDeposits1000);
+
+  // let a = 10;
+  // console.log(++a)
+  // console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+  //3. create an object
+  const { deps, withs } = accounts
     .flatMap(acc => acc.movements)
-    // .reduce((acc, num) => acc + num, 0)
-    // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count) , 0);
-    .reduce((count, cur) => (cur >= 1000 ? ++count : count) , 0);
+    .reduce(
+      (sums, cur) => {
+        // cur > 0 ? (sums.deps += cur) : (sums.withs += cur);
+        sums[ cur > 0 ? 'deps' : 'withs'] += cur;
+        return sums;
+      },
+      { deps: 0, withs: 0 }
+    ); 
 
-    // .filter(mov => mov >= 1000).length;
-
-  console.log(numDeposits1000);
-
-  let a = 10;
-  console.log(++a)
-  console.log(a)
+    console.log(deps, withs); // {deposits: 25180, withdrawals: -7340}
