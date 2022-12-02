@@ -37,3 +37,50 @@ const checkDogs = function(dogsJulia, dogsKate) {
   
   const average1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
   const average2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+
+
+
+
+  // let average = dogs.flat();
+  // console.log(average)
+
+
+//   const averageFood = function(avg) {
+//     let rec = avg[0]
+//     for(let i = 0; i < rec.length; i++) {
+//     let food = avg[i]
+//     food ** 0.75 * 28
+//   } 
+// } 
+// const check = averageFood(dogs{weight})
+
+// for( const x of dogs) {
+//   dogs.flat()
+//    recommendedFood = weight ** .75 * 28;
+//   console.log(recommendedFood)}
+
+
+
+
+// const new1 = []
+// for( let i = 0; i < weight.length; i++ ) {
+//   new1.push(`recommendedFood: ${weight[i]} ** 0.75 * 28`)
+// }
+// console.log(new1)
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// 1.
+dogs.forEach(dog => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28)));
+console.log(dogs)
+
+
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(dogSarah)
+
+// const ownersEatTooMuch = 

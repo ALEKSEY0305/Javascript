@@ -1015,7 +1015,7 @@ btnSort.addEventListener('click', function(e) {
 
 
 
-  // 4. 
+  // 4. Capitalize words with exeptions
   // this is a nice title => This Is a Nice Title
   const convertTitleCase = function (title) {
     const capitalize = str => str[0].toUpperCase() + str.slice(1);
@@ -1045,4 +1045,69 @@ btnSort.addEventListener('click', function(e) {
   console.log(convertTitleCase('this is a nice title'));
   console.log(convertTitleCase('this is a LONG title, but not too long'));
   console.log(convertTitleCase('and here is another title with an EXAMPLE'))
+
+
+
+
+  const dogs = [
+    { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+    { weight: 8, curFood: 200, owners: ['Matilda'] },
+    { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+    { weight: 32, curFood: 340, owners: ['Michael'] },
+  ];
   
+  // 1.
+  dogs.forEach(dog => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28)));
+  console.log(dogs)
+  
+  
+  const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+  console.log(dogSarah)
+  console.log(`Sarah's dog is eating too ${dogSarah.curFood > dogSarah.recommendedFood ? 'much' : 'little'}`)
+
+  // 3. 
+  const ownersEatTooMuch = dogs.filter( dog => dog.curFood > dog.recommendedFood).map( dog => dog.owners).flat();
+  console.log(ownersEatTooMuch);
+
+  const ownersEatTooLittle = dogs.filter( dog => dog.curFood < dog.recommendedFood).flatMap(dog => dog.owners);
+  console.log(ownersEatTooLittle);
+
+  // 4
+  
+  console.log(`${ownersEatTooMuch.join( ' and ')}'s dogs eat too much`);
+
+  console.log(`${ownersEatTooLittle.join( ' and ')}'s dogs eat too little`);
+
+  
+  // 5
+
+  const exactAmount = dogs.filter(dog => dog.curFood === dog.recommendedFood);
+  if(exactAmount >= 1) {
+    console.log(`eating exactly the ammount of food that is recommended`)
+  } else {
+    console.log(`no dog is eating the exact ammount of food`)
+  }
+
+  console.log(dogs.some(dog => dog.curFood === dog.recommendedFood));
+
+  // 6
+
+  const eatingOkay = dog => dog.curFood > dog.recommendedFood * 0.9 && dog.curFood < dog.recommendedFood * 1.1
+
+  console.log(dogs.some(eatingOkay))
+// console.log(dogs.some(dog => dog.curFood > dog.recommendedFood * 0.9 && dog.curFood < dog.recommendedFood * 1.1));
+
+
+
+// const okay = dogs.curFood > dogs.recommendedFood * 0.9 && dogs.curFood < dogs.recommendedFood * 1.1 ? `yes` : 'no';
+// console.log(okay)        // MISTAKE
+
+
+// 7. 
+
+console.log(dogs.filter(eatingOkay))
+
+
+// 8 
+const dogsCopy = dogs.slice().sort((a, b) => a.recommendedFood - b.recommendedFood)
+console.log(dogsCopy)
