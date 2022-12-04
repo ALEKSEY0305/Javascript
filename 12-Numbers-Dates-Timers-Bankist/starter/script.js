@@ -396,16 +396,55 @@ btnSort.addEventListener('click', function (e) {
 
 // NUMERIC separators
 // 287,460,000,000
-const diameter = 287_460_000_000;
-console.log(diameter);
+// const diameter = 287_460_000_000;
+// console.log(diameter);
 
-const priceCents = 345_99;
-console.log(priceCents);
+// const priceCents = 345_99;
+// console.log(priceCents);
 
-const transferFee = 15_00;
-const transferFee2 = 1_500;
+// const transferFee = 15_00;
+// const transferFee2 = 1_500;
 
-// const PI = 3._1415    // Uncaught SyntaxError
+// // const PI = 3._1415    // Uncaught SyntaxError
 
-console.log(Number('230_000'));      // NaN
-console.log(parseInt('230_000'));      // 230
+// console.log(Number('230_000'));      // NaN
+// console.log(parseInt('230_000'));      // 230
+
+
+// 9,007,199,254,740,996
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+console.log(423857283759813274012841241242315326n);
+console.log(BigInt(423857283759))
+
+
+// Operations
+console.log(10000n + 10000n);
+console.log(23135423632342535325324n * 10000000n) //231354236323425353253240000000n
+// console.log(Math.sqrt(16n));  //Uncaught TypeError: Cannot convert a BigInt value to a number
+
+const huge = 214235323283535234234154n;
+const num = 23;
+// console.log(huge * num);  // script.js:432 Uncaught TypeError:
+console.log(huge * BigInt(num));  //4927412435521310387385542n
+
+
+// EXCEPTIONS
+console.log(20n > 15) // true
+console.log(20n === 20) // false (tripple op = no cohersion)
+console.log(typeof 20n);  //bigint
+console.log(20n == '20') // true
+
+
+console.log(huge + ' is Really big!!!') // 214235323283535234234154 is Really big!!!
+
+
+
+// DIVISIONS
+console.log(11n / 3n);  // 3n (cut off decimal part)
+console.log(10n / 3n);  // 3n
+console.log(10 / 3);
