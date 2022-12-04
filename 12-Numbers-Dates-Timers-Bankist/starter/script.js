@@ -411,40 +411,95 @@ btnSort.addEventListener('click', function (e) {
 // console.log(parseInt('230_000'));      // 230
 
 
+
+
+
+
+// BIG INTEGER
+
 // 9,007,199,254,740,996
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(2 ** 53 + 1);
-console.log(2 ** 53 + 2);
-console.log(2 ** 53 + 3);
-console.log(2 ** 53 + 4);
-console.log(423857283759813274012841241242315326n);
-console.log(BigInt(423857283759))
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2 ** 53 + 1);
+// console.log(2 ** 53 + 2);
+// console.log(2 ** 53 + 3);
+// console.log(2 ** 53 + 4);
+// console.log(423857283759813274012841241242315326n);
+// console.log(BigInt(423857283759))
 
 
-// Operations
-console.log(10000n + 10000n);
-console.log(23135423632342535325324n * 10000000n) //231354236323425353253240000000n
-// console.log(Math.sqrt(16n));  //Uncaught TypeError: Cannot convert a BigInt value to a number
+// // Operations
+// console.log(10000n + 10000n);
+// console.log(23135423632342535325324n * 10000000n) //231354236323425353253240000000n
+// // console.log(Math.sqrt(16n));  //Uncaught TypeError: Cannot convert a BigInt value to a number
 
-const huge = 214235323283535234234154n;
-const num = 23;
-// console.log(huge * num);  // script.js:432 Uncaught TypeError:
-console.log(huge * BigInt(num));  //4927412435521310387385542n
-
-
-// EXCEPTIONS
-console.log(20n > 15) // true
-console.log(20n === 20) // false (tripple op = no cohersion)
-console.log(typeof 20n);  //bigint
-console.log(20n == '20') // true
+// const huge = 214235323283535234234154n;
+// const num = 23;
+// // console.log(huge * num);  // script.js:432 Uncaught TypeError:
+// console.log(huge * BigInt(num));  //4927412435521310387385542n
 
 
-console.log(huge + ' is Really big!!!') // 214235323283535234234154 is Really big!!!
+// // EXCEPTIONS
+// console.log(20n > 15) // true
+// console.log(20n === 20) // false (tripple op = no cohersion)
+// console.log(typeof 20n);  //bigint
+// console.log(20n == '20') // true
+
+
+// console.log(huge + ' is Really big!!!') // 214235323283535234234154 is Really big!!!
 
 
 
-// DIVISIONS
-console.log(11n / 3n);  // 3n (cut off decimal part)
-console.log(10n / 3n);  // 3n
-console.log(10 / 3);
+// // DIVISIONS
+// console.log(11n / 3n);  // 3n (cut off decimal part)
+// console.log(10n / 3n);  // 3n
+// console.log(10 / 3);
+
+
+
+
+
+// CREATE a date
+
+// const now = new Date()
+// console.log(now)  // Mon Dec 05 2022 03:45:10 GMT+0900 (Korean Standard Time)
+// console.log(new Date('Dec 05 2022 03:44:43'))  // Mon Dec 05 2022 03:45:10 GMT+0900 (Korean Standard Time)
+
+// console.log(new Date('April 25, 1995'));
+
+// console.log(new Date(account1.movementsDates[0]));
+
+// console.log(new Date(2037, 10, 19, 15, 23, 5)) // month is 0 based. jan = 0 feb = 1
+// console.log(new Date(2037, 10, 31)) // Tue Dec 01 2037
+
+// console.log(new Date(0)); // Thu Jan 01 1970 09:00:00 UNIX TIME
+// console.log(new Date(3 * 24 * 60 * 60 * 1000)); // 259200000
+
+
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142224580000)); // msecs since 1970
+
+console.log(Date.now());  //1670180423502 since 1970
+
+future.setFullYear(2040);
+console.log(future)
+
+future.setMonth(2);
+console.log(future)
+
+
+
+
