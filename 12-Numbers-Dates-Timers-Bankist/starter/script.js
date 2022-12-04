@@ -297,47 +297,94 @@ btnSort.addEventListener('click', function (e) {
 // console.log(Number.isInteger(23.0));  // true
 // console.log(Number.isInteger(23 / 0));  // false
 
-console.log(Math.sqrt(25)); // 5
-console.log(25 ** (1 / 2))  // 5
 
-console.log(Math.max(5, 18, 23, 11, 2));
-console.log(Math.max(5, 18, '23', 11, 2));
-console.log(Math.max(5, 18, '23px', 11, 2));
+ // Math
 
+// console.log(Math.sqrt(25)); // 5
+// console.log(25 ** (1 / 2))  // 5
 
-console.log(Math.min(5, 18, 23, 11, 2));
-
-console.log(Math.PI * Number.parseFloat('10px') ** 2);  // 314
-
-console.log(Math.trunc(Math.random() * 6) + 1);
-
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min) + 1) + min;
-// 0...1 -> 0...(max-min) -> min...max
-console.log(randomInt(10, 20));
+// console.log(Math.max(5, 18, 23, 11, 2));
+// console.log(Math.max(5, 18, '23', 11, 2));
+// console.log(Math.max(5, 18, '23px', 11, 2));
 
 
-// Rounding Integers
+// console.log(Math.min(5, 18, 23, 11, 2));
 
-console.log(Math.trunc(23.3));
+// console.log(Math.PI * Number.parseFloat('10px') ** 2);  // 314
 
+// console.log(Math.trunc(Math.random() * 6) + 1);
 
-console.log(Math.round(23.3));
-console.log(Math.round(23.9));
-
-console.log(Math.ceil(23.3));
-console.log(Math.ceil(23.9));
-
-console.log(Math.floor(23.3));
-console.log(Math.floor('23.9'));
-
-console.log(Math.trunc(-23.3));
-console.log(Math.floor(-23.3));
+// const randomInt = (min, max) => Math.floor(Math.random() * (max - min) + 1) + min;
+// // 0...1 -> 0...(max-min) -> min...max
+// console.log(randomInt(10, 20));
 
 
-// Rounding decimals
-console.log((2.7).toFixed(0));
-console.log((2.7).toFixed(3));
-console.log((2.345).toFixed(2));
-console.log(+(2.345).toFixed(2));
+// // Rounding Integers
+
+// console.log(Math.trunc(23.3));
 
 
+// console.log(Math.round(23.3));
+// console.log(Math.round(23.9));
+
+// console.log(Math.ceil(23.3));
+// console.log(Math.ceil(23.9));
+
+// console.log(Math.floor(23.3));
+// console.log(Math.floor('23.9'));
+
+// console.log(Math.trunc(-23.3));
+// console.log(Math.floor(-23.3));
+
+
+// // Rounding decimals
+// console.log((2.7).toFixed(0));
+// console.log((2.7).toFixed(3));
+// console.log((2.345).toFixed(2));
+// console.log(+(2.345).toFixed(2));
+
+
+
+
+// reminder operator
+
+console.log(5 % 2); //1
+console.log(5 / 2); // 5 = 2 * 2 + 1
+console.log(8 % 3); // 2
+console.log(8 / 3); // 2.6
+
+
+console.log(6 / 2); // 3
+console.log(6 % 2);  // 0
+
+console.log(7 / 2); // 3.5
+console.log(7 % 2); // 1
+
+console.log(13 / 3);  // 4.3333
+console.log(13 % 3);  // 1
+
+
+console.log(21 / 3);  // 7
+console.log(21 % 6);  // 3
+
+const isEven = n => n % 2 === 0;
+const isOdd = n => n % 2 === 1;
+console.log(isEven(+'8')) // true
+console.log(isEven(13))   // false
+console.log(isEven(22))   // true
+console.log(isEven(443))   // false
+console.log(isEven(67))   // false
+console.log(isEven(10))   // true
+  
+console.log(isOdd(13))    // true
+console.log(isOdd(+'13')) // true
+console.log(isOdd(14222)) // false
+console.log(isOdd(12135))  // true
+console.log(isOdd(152364))  // false
+
+
+labelBalance.addEventListener('click', function(){
+  [...document.querySelectorAll('.movements__row')].forEach(function(row, i) {
+    if(i % 2 === 0) row.style.backgroundColor = 'orangered';
+  });
+ })
