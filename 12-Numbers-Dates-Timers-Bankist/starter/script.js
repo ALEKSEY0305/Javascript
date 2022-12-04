@@ -348,43 +348,64 @@ btnSort.addEventListener('click', function (e) {
 
 // reminder operator
 
-console.log(5 % 2); //1
-console.log(5 / 2); // 5 = 2 * 2 + 1
-console.log(8 % 3); // 2
-console.log(8 / 3); // 2.6
+// console.log(5 % 2); //1
+// console.log(5 / 2); // 5 = 2 * 2 + 1
+// console.log(8 % 3); // 2
+// console.log(8 / 3); // 2.6
 
 
-console.log(6 / 2); // 3
-console.log(6 % 2);  // 0
+// console.log(6 / 2); // 3
+// console.log(6 % 2);  // 0
 
-console.log(7 / 2); // 3.5
-console.log(7 % 2); // 1
+// console.log(7 / 2); // 3.5
+// console.log(7 % 2); // 1
 
-console.log(13 / 3);  // 4.3333
-console.log(13 % 3);  // 1
+// console.log(13 / 3);  // 4.3333
+// console.log(13 % 3);  // 1
 
 
-console.log(21 / 3);  // 7
-console.log(21 % 6);  // 3
+// console.log(21 / 3);  // 7
+// console.log(21 % 6);  // 3
 
-const isEven = n => n % 2 === 0;
-const isOdd = n => n % 2 === 1;
-console.log(isEven(+'8')) // true
-console.log(isEven(13))   // false
-console.log(isEven(22))   // true
-console.log(isEven(443))   // false
-console.log(isEven(67))   // false
-console.log(isEven(10))   // true
+// const isEven = n => n % 2 === 0;
+// const isOdd = n => n % 2 === 1;
+// console.log(isEven(+'8')) // true
+// console.log(isEven(13))   // false
+// console.log(isEven(22))   // true
+// console.log(isEven(443))   // false
+// console.log(isEven(67))   // false
+// console.log(isEven(10))   // true
   
-console.log(isOdd(13))    // true
-console.log(isOdd(+'13')) // true
-console.log(isOdd(14222)) // false
-console.log(isOdd(12135))  // true
-console.log(isOdd(152364))  // false
+// console.log(isOdd(13))    // true
+// console.log(isOdd(+'13')) // true
+// console.log(isOdd(14222)) // false
+// console.log(isOdd(12135))  // true
+// console.log(isOdd(152364))  // false
 
 
-labelBalance.addEventListener('click', function(){
-  [...document.querySelectorAll('.movements__row')].forEach(function(row, i) {
-    if(i % 2 === 0) row.style.backgroundColor = 'orangered';
-  });
- })
+// labelBalance.addEventListener('click', function(){
+//   [...document.querySelectorAll('.movements__row')].forEach(function(row, i) {
+//     if(i % 2 === 0) row.style.backgroundColor = 'orangered';  // 0, 2, 4, 6, 8
+//     if(i % 3 === 0) row.style.backgroundColor = 'blue'; // 0, 3, 6, 9
+//   });
+//  })
+
+
+
+
+
+// NUMERIC separators
+// 287,460,000,000
+const diameter = 287_460_000_000;
+console.log(diameter);
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+const transferFee = 15_00;
+const transferFee2 = 1_500;
+
+// const PI = 3._1415    // Uncaught SyntaxError
+
+console.log(Number('230_000'));      // NaN
+console.log(parseInt('230_000'));      // 230
