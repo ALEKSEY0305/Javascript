@@ -83,7 +83,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 const formatMovementDate = function(date, locale) {
   const calcDaysPassed = (date1, date2) => Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed)
+  // console.log(daysPassed)
 
   if(daysPassed === 0) return 'Today';
   if(daysPassed === 1) return 'Yesterday';
@@ -293,16 +293,16 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
+      // Add loan date
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-   // Add loan date
-   currentAccount.movementsDates.push(new Date().toISOString());
-
-
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
   inputLoanAmount.value = '';
 });
@@ -607,20 +607,65 @@ btnSort.addEventListener('click', function (e) {
 
 
 
-const num = 3884764.23;
+// const num = 3884764.23;
 
-const options = {
-  style: 'currency',
-  // unit: 'mile-per-hour',
-  unit: 'celsius',
-  currency: 'USD',
-  // useGrouping: false,
+// const options = {
+//   style: 'currency',
+//   // unit: 'mile-per-hour',
+//   unit: 'celsius',
+//   currency: 'USD',
+//   // useGrouping: false,
   
-}
-console.log('US: ',new Intl.NumberFormat('en-US', options).format(num));
-console.log('RUS: ',new Intl.NumberFormat('ru-RU', options).format(num));
-console.log('GER: ',new Intl.NumberFormat('de-DE', options).format(num));
-console.log('SYR: ',new Intl.NumberFormat('ar-SY', options).format(num));
-console.log('Browser: ',new Intl.NumberFormat(navigator.language, options).format(num));
+// }
+// console.log('US: ',new Intl.NumberFormat('en-US', options).format(num));
+// console.log('RUS: ',new Intl.NumberFormat('ru-RU', options).format(num));
+// console.log('GER: ',new Intl.NumberFormat('de-DE', options).format(num));
+// console.log('SYR: ',new Intl.NumberFormat('ar-SY', options).format(num));
+// console.log('Browser: ',new Intl.NumberFormat(navigator.language, options).format(num));
 
 
+
+
+// SET Time Out
+
+
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`),
+  3000,
+  ...ingredients
+);
+
+if(ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+console.log('Waiting...');
+
+
+
+
+
+// // setInterval;
+// function currentTime () {
+//   const now = new Date();
+//   let hours = now.getHours();
+//   let minutes = now.getMinutes();
+//   let seconds = now.getSeconds();
+// // let time =`${hours}:${minutes}:${seconds}`;
+
+// let t = setTimeout(() => {currentTime()}, 1000)
+// };
+// console.log(currentTime())
+
+
+
+
+
+
+// setInterval;
+// const time = setInterval(function () {
+//   new Intl.DateTimeFormat('en-US').format();
+//   console.log(+now.getHours(), +now.getMinutes(), +now.getSeconds());
+// }, 1000);
+// console.log(time)
+
+
+const another = setInterval(() => console.log(new Date()), 1000);
