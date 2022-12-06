@@ -205,16 +205,16 @@ const startLogOutTimer = function () {
     // Decrease 1 sec
    
   // Set time to 5min
-  let time = 30;
+  let time = 120;
 
   //call the timer every second
   tick()
   const timer = setInterval(tick, 1000);
+  return timer;
 };
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
-
+let currentAccount, timer;
 
 
 // FAKE ALWAYS LOGGED IN
@@ -283,7 +283,10 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    startLogOutTimer();
+
+    // Timer 
+    if(timer) clearInterval(timer);
+    timer = startLogOutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -314,6 +317,10 @@ btnTransfer.addEventListener('click', function (e) {
     receiverAcc.movementsDates.push(new Date().toISOString());
     // Update UI
     updateUI(currentAccount);
+
+    // Reset Timer 
+    clearInterval(timer);
+    timer = startLogOutTimer();
   }
 });
 
@@ -332,6 +339,11 @@ btnLoan.addEventListener('click', function (e) {
 
       // Update UI
       updateUI(currentAccount);
+
+        // Reset Timer 
+    clearInterval(timer);
+    timer = startLogOutTimer();
+
     }, 2500);
   }
   inputLoanAmount.value = '';
