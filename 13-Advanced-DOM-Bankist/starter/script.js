@@ -92,3 +92,73 @@ document
     message.remove();
     // message.parentElement.removeChild(message)
   });
+
+
+  //styles
+
+  message.style.backgroundColor = '#37383d';
+  message.style.width = '120%';
+
+  console.log(message.style.color);
+  console.log(message.style.backgroundColor);
+  console.log(getComputedStyle(message).color)
+  console.log(getComputedStyle(message).height)
+
+  message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+
+  document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+
+
+
+
+  // Attributes
+
+  const logo = document.querySelector('.nav__logo');
+  console.log(logo.alt);
+
+
+  // Non-standart
+
+  console.log(logo.designer);
+  console.log(logo.getAttribute('designer'));
+
+
+  // Set attribute
+  logo.setAttribute('company', 'Toss')
+
+
+
+
+
+
+  console.log(logo.src);
+  console.log(logo.getAttribute('src'));
+
+
+
+
+const link = document.querySelector('.twitter-link');
+
+
+// S A M E
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+
+
+// Data Attributes
+console.log(logo.dataset.versionNumber);
+
+
+// Classes
+
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+
+
+// Bad    MUTATES CLASSES
+// logo.className = 'alex'
