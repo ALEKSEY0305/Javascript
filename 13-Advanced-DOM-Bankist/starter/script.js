@@ -166,28 +166,29 @@ const link = document.querySelector('.twitter-link');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener('click', function(e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords)
+// btnScrollTo.addEventListener('click', function(e) {
+//   // const s1coords = section1.getBoundingClientRect();
+//   // console.log(s1coords)
 
-  console.log(e.target.getBoundingClientRect());
+//   // console.log(e.target.getBoundingClientRect());
 
-  console.log('Current Scroll (X/Y) ', window.pageXOffset,window.pageYOffset);
+//   // console.log('Current Scroll (X/Y) ', window.pageXOffset,window.pageYOffset);
 
-  console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth)
+//   // console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth)
 
 
 
-// scrolling
+// // scrolling
 
-  // window.scrollTo(s1coords.left + window.pageXOffset, s1coords.top + window.pageYOffset);
+//   // window.scrollTo(s1coords.left + window.pageXOffset, s1coords.top + window.pageYOffset);
 
-  // window.scroll({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
+//   // window.scroll({
+//   //   left: s1coords.left + window.pageXOffset,
+//   //   top: s1coords.top + window.pageYOffset,
+//   //   behavior: 'smooth',
+//   // });
 
-  section1.scrollIntoView({behavior: 'smooth'});
-});
+//   section1.scrollIntoView({behavior: 'smooth'});
+// });
 
+btnScrollTo.addEventListener('click', () => section1.scrollIntoView({behavior: 'smooth'}));
