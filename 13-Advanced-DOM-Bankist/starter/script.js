@@ -165,6 +165,7 @@ const link = document.querySelector('.twitter-link');
 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+btnScrollTo.addEventListener('click', () => section1.scrollIntoView({behavior: 'smooth'}));
 
 // btnScrollTo.addEventListener('click', function(e) {
 //   // const s1coords = section1.getBoundingClientRect();
@@ -191,4 +192,27 @@ const section1 = document.querySelector('#section--1');
 //   section1.scrollIntoView({behavior: 'smooth'});
 // });
 
-btnScrollTo.addEventListener('click', () => section1.scrollIntoView({behavior: 'smooth'}));
+
+//    EVENTS
+
+//New Way
+const h1 = document.querySelector('h1')
+
+
+const alertH1 = function(e) {
+  alert('addEventListener: You are reading the header!')
+
+  h1.removeEventListener('mouseenter', alertH1);
+
+}
+
+h1.addEventListener('mouseenter', alertH1);
+
+
+  
+  // setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+//Old way
+// h1.onmouseenter = function(e) {
+//   alert('onmouseenter: You are reading the header!')
+// };
+
