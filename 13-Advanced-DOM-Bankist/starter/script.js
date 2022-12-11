@@ -79,15 +79,34 @@ btnScrollTo.addEventListener('click', () => section1.scrollIntoView({behavior: '
 
 // PAGE Navigation
 
-document.querySelectorAll('.nav__link').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    e.preventDefault();
-    const id = this.getAttribute('href');
-    // console.log(id);
-    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-  });
-});
+// document.querySelectorAll('.nav__link').forEach(function(el) {
+//   el.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     // console.log(id);
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+//   });
+// });
 
+
+
+
+// 1. add event listener to common parent element
+// 2. determine what element originated the event
+
+
+document.querySelector('.nav__links').addEventListener('click', function(e) {
+  console.log(e.target)
+  e.preventDefault();
+
+
+
+
+  if(e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+  }
+})
 
 
 /////////////////////////////////////////////////
