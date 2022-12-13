@@ -164,7 +164,7 @@ const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return;
 
@@ -187,7 +187,7 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return;
 
@@ -535,3 +535,20 @@ const link = document.querySelector('.twitter-link');
 // console.log(...add)
 // let i = Math.max.apply(null, add)
 // console.log(i)
+
+document.addEventListener('DOMContentLoaded', function(e) {
+  console.log('HTML parsed and DOM tree built!', e)
+});
+
+window.addEventListener('load', function(e) {
+  console.log('Page fully loaded', e)
+})
+
+
+
+// ask if we are sure to leave the page
+// window.addEventListener('beforeunload', function(e) {
+//   e.preventDefault();
+//     console.log(e)
+//     e.returnValue = '';
+// })
