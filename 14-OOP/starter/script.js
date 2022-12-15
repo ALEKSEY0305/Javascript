@@ -63,4 +63,11 @@ console.log(Person.prototype.isPrototypeOf(Person))
 
 // newMe.age = 25
 
-// console.log(me)
+// console.log(me)prototypeOfLinkedObjects
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(alex.species, matilda.species);
+
+console.log(alex.hasOwnProperty('firstName'))
+console.log(alex.hasOwnProperty('species'))
+
