@@ -71,3 +71,5 @@ console.log(alex.species, matilda.species);
 console.log(alex.hasOwnProperty('firstName'))
 console.log(alex.hasOwnProperty('species'))
 
+
+// prototype inheritance / the prototype chain
