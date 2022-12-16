@@ -73,3 +73,27 @@ console.log(alex.hasOwnProperty('species'))
 
 
 // prototype inheritance / the prototype chain
+console.log(alex.__proto__);
+// Object.prototype (top of prototype chain)
+console.log(alex.__proto__.__proto__);
+console.log(alex.__proto__.__proto__.__proto__);
+
+console.log(Person.prototype.constructor); //constructor
+console.dir(Person.prototype.constructor); //constructor function
+
+const arr = [3, 6, 4, 5, 6, 9, 3]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+
+Array.prototype.unique = function() {
+return [...new Set(this)]
+};
+
+console.log(arr.unique());  // not suggested to use this
+
+
+
+const h1 = document.querySelector('h1')
