@@ -131,3 +131,35 @@ bmw.drive()
 bmw.drive()
 bmw.drive()
 console.log(bmw)
+
+
+
+
+
+///////////////////////////////////////////////////////
+// Optional Chaining
+const auto = null
+  // brand: 'Tesla',
+  // model: 'ModelX',
+  // details: {
+  //   color: 'Red',
+  //   year: 2021,
+  //   atStock: true,
+  // }
+  
+  //
+  // drive() {
+  //   console.log(('rrrrrrrr'))
+  // }
+// }
+
+// const cars = [auto];
+
+// cars.forEach(car => {
+//   console.log(`${car.brand} ${car.details?.year}: color - ${car.details?.color}`)
+// })
+
+// Optional Chaining precvents app failures
+// helps when there is no data in the object or method
+console.log(auto?.drive?.())
+// console.log(auto?.['brand'])
