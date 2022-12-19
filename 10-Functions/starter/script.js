@@ -431,20 +431,20 @@
 
 // //MISTAKE CLOSURE
 
-// // function bind(contex, fn) { 
-// //         return function(...args) {
-// //                 fn.aplly(contex, args ) 
-// //         }
-// // };
-// // function logPreson() {
-// //         console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
-// // }
+function bind(contex, fn) { 
+        return function(...args) {
+                fn.aplly(contex, args ) 
+        }
+};
+function logPreson() {
+        console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
+}
 
-// // const person1 = { name: 'Alex', age: 27, job: 'S/W Developer'};
-// // const person2 = { name: 'Ben', age: 33, job: 'iOS Developer'};
+const person1 = { name: 'Alex', age: 27, job: 'S/W Developer'};
+const person2 = { name: 'Ben', age: 33, job: 'iOS Developer'};
 
-// // bind(person1, logPreson())
-// // bind(person2, logPreson())
+bind(person1, logPreson())
+bind(person2, logPreson())
 
 (function() {
         const header = document.querySelector('h1');
