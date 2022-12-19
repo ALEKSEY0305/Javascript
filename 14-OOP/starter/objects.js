@@ -163,3 +163,79 @@ const auto = null
 // helps when there is no data in the object or method
 console.log(auto?.drive?.())
 // console.log(auto?.['brand'])
+
+
+
+
+
+
+
+
+// class -> function 
+// class = abstraction
+class User {
+    // username
+    // password
+    //constructor is always important
+    constructor (username, password){
+      this.username = username;
+      this.password = password;
+    } 
+    validatePassword () {
+      // > 6
+      console.log('work parent class')
+      if(this.password.length >= 6) {
+        return true;
+      }
+      return false;
+      // this.password.length >= 6 ? true : false;
+      // / doesn't work !!!!!
+    } 
+  }
+  class Student extends User {
+   constructor(username, password, nickname){
+     super(username, password);
+     this.nckname = nickname;
+   } 
+    
+    getStudentCourses(){
+      return [1, 2]
+    }
+    validatePassword () {
+      // > 6!!! 10
+      super.validatePassword()
+      if(this.password.length >= 10) {
+        return true;
+      }
+      return false;
+    }
+  }
+  
+  
+  const a = 'Alex';
+  const b = '7778888'
+  const person = new User(a, b);
+  const firstStudent = new Student(a, b, 'I123')
+  
+  console.log(person);
+  console.log(person.username);
+  console.log(person.validatePassword())
+   
+  
+  console.log(firstStudent)
+  console.log(firstStudent.getStudentCourses())
+  console.log(firstStudent.validatePassword())
+  
+  
+  
+  // methods = functions inside a class
+  // the difference is that methods are incapsulated
+  // we car change methods and values in the child class
+  //
+  
+  // extend spreads parent class 
+  // super gives sends request to get to parent class data// отправляет запрос прототипу чтобы запустить его метод
+  
+  
+  
+  
