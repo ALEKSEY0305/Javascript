@@ -56,3 +56,110 @@ console.log(person1.tonishtiring());  //console: "mening ismim hamid va mening m
 // !!!IMPORTANT. oddiy and anonim functions attaches(mutate) the value of 'this' to themselves(functions).
 
 // !!!IMPORTANT. Arrow functions don't affect the original value of 'this' keyword.
+
+
+
+
+let olma = 270;
+
+//  && = if both are true => true
+//  || = if either is true => true
+//  ?? = returns the RIGHT side operand if the LEFT-side operand is:
+// 1. NULL
+// 2. UNDEFINED
+// 3. 0 
+// 4. ''    empty string
+
+
+
+
+// if deploy
+if(olma >= 200) {
+  console.log(`olamalaringiz 200dan kam emas`)
+} else if(olma >= 150 && olma < 200) {
+  console.log('olmalaringiz soni 150 va 200 oralidiga')
+} else{
+  console.log('olmalaringiz soni 150da kam')
+}
+
+
+class Plastic {
+  constructor(account, owner, amount, expDate) {
+    this.account = account;
+    this.owner = owner;
+    this.amount = amount;
+    this.expDate = expDate;
+  }
+  
+  withdrawal(a){
+    if(a <= this.amount){
+      console.log(`Withdrawing: ${a} `)
+    this.amount = this.amount - a;
+  } else{
+    console.log(`You don't have enough funds`)
+  }
+  }
+  balance(){
+    console.log(`Your balance is $${this.amount}`);
+  }
+}
+
+const card = new Plastic(123456789, 'Alex', 120_000, '11.05.2026');
+card.balance();
+
+// operatsiyalar
+
+// uy sotib olish
+
+card.withdrawal(100_000);
+card.balance();
+
+// mashina olish
+card.withdrawal(25_000)
+card.balance();
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// if
+
+let x = 15;
+
+if(x > 50) {
+  console.log('More than 50')
+} else if(x > 20) {
+  console.log('More than 20, less than 50')
+} else{
+  console.log('Less than 20')
+}
+
+
+
+
+
+
+// Switch
+
+let goods = 'book';   // "give it back"
+
+switch(goods) {
+  case 'notebook':
+    console.log('put on shelf');
+    break;              // stops the process if true
+  case 'book':
+    console.log('give it back');
+    break;
+  case 'money' :
+    console.log('keep it');
+    break;              
+  default:             // if no case is true
+    console.log('life is good');
+    break    
+}
+
+
+///!!! IMPORTANT
+// Switch compares the value of the variable with the cases, and returns the one that is true;
+
+// Default returns its value when no case is true;
