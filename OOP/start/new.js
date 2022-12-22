@@ -5,15 +5,15 @@
 // let b = 13;
 
 // function hisoblash(a, b)
-function hisoblash(a) { // Second priority
-  const c = a + b;      // First priority
-  console.log(c);
-}
+// function hisoblash(a) { // Second priority
+//   const c = a + b;      // First priority
+//   console.log(c);
+// }
 
 // hisoblash(7, 13);  // console: 20 // uses function data (a + b) (7)
 // console.log(c)  // can't access function variable  //console: Uncaught ReferenceError
 
-hisoblash(12); // console: 25 // function can use external variables (Second priority)
+// hisoblash(12); // console: 25 // function can use external variables (Second priority)
 
 
 
@@ -163,3 +163,37 @@ switch(goods) {
 // Switch compares the value of the variable with the cases, and returns the one that is true;
 
 // Default returns its value when no case is true;
+
+
+
+
+// forEach = executes the given function on every element on the given array
+const numbers = [1, 2, 3, 4, 5]
+
+// numbers.forEach((item, index, array) => {
+//   console.log(`a [${index}] = ${item}`)
+//   console.log(array)
+// });
+
+const num = [1, 2, 3, 4, 5, 6,]
+ let sum = 0;
+
+ num.forEach((item) => sum += item)
+
+ console.log(sum)
+
+
+
+ const letters = [ 'f', 'a', 'b', 'a', 'c', 'b', 'a', 'd', 'c', 'd']
+
+ let count = {};
+
+ letters.forEach(item => {
+  if(count[item]) {
+    count[item]++
+  } else {
+    count[item] = 1
+  }
+  });
+ 
+  console.log(count)
