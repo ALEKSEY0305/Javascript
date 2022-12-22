@@ -168,12 +168,16 @@ switch(goods) {
 
 
 // forEach = executes the given function on every element on the given array
-const numbers = [1, 2, 3, 4, 5]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 35, 33, 12]
 
 // numbers.forEach((item, index, array) => {
 //   console.log(`a [${index}] = ${item}`)
 //   console.log(array)
 // });
+
+const summary = numbers.reduce((acc, sum) => acc + sum)
+console.log(summary)
+
 
 const num = [1, 2, 3, 4, 5, 6,]
  let sum = 0;
@@ -197,3 +201,49 @@ const num = [1, 2, 3, 4, 5, 6,]
   });
  
   console.log(count)
+
+
+
+
+
+  // const word = function countLetter(letter, string) {
+  //   let num = 0
+  //   for(let i = 0; i < string.length; i++) {
+  //     if(string.charAt(i) === letter) {
+  //       num += 1
+  //     }
+  //   }
+  //   return num;
+  // }
+  
+  // console.log(word('s', 'subconsciousness'));
+  
+
+  
+  
+  
+
+
+
+
+  const tilak = function countLetter(letter, string) {
+    let num = 0
+    for(let i = 0; i < string.length; i++) {
+      if(string.charAt(i) === letter) num += 1;
+    }
+    return num;
+  }
+  
+  console.log(tilak('a', 'hammamizga_bir_tonna_sabr_tilayman'));
+  
+  
+
+  function countLetter(letter, string) {
+    let num = 0
+    for(let i = 0; i < string.length; i++) {
+      if(string.charAt(i) === letter) num += 1;
+    }
+    return num;
+  }
+  
+  console.log(`javob: ${countLetter('a', 'hammamizga_bir_tonna_sabr_tilayman')}`); //7
