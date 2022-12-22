@@ -236,7 +236,18 @@ const num = [1, 2, 3, 4, 5, 6,]
   
   console.log(tilak('a', 'hammamizga_bir_tonna_sabr_tilayman'));
   
+
+  const tilak2 = (letter, string) => {
+    let num = 0
+    for(let i = 0; i < string.length; i++) {
+      if(string.charAt(i) === letter) num += 1;
+    }
+    return num;
+  }
   
+  console.log(`Arrow function: ${tilak2('a', 'arrow_function_bilan_yosalgan_usuli')}`);
+
+
 
   function countLetter(letter, string) {
     let num = 0
@@ -247,3 +258,100 @@ const num = [1, 2, 3, 4, 5, 6,]
   }
   
   console.log(`javob: ${countLetter('a', 'hammamizga_bir_tonna_sabr_tilayman')}`); //7
+
+
+
+  let arr1=[-3,8,7,6,5,-4,3,2,1];
+  arr1.sort((a, b) => a -b);
+  console.log(arr1)
+
+
+
+
+
+
+  // var mainStr = "str1,str2,str3,str4";
+  console.log(("str1,str2,str3,str4".match(/,/g) || []).length); //logs 3
+
+
+  ("this is foo bar".match(/o/g)||[]).length;
+
+
+
+//   let str = "development"
+//   str
+//     .split('')
+//     .map(function (e, i) {
+//       if (e === 'e') return i;
+//     })
+//     .filter(Boolean)
+//     [(9, 10)]
+//     .length;
+//   // returns 2
+
+// console.log(str)
+
+String.prototype.count= function(word) { 
+  let letterNum = 0;
+
+  for(i = 0; i < this.length; i++)
+  if(this[i]===word)letterNum++;
+
+  return letterNum;
+};
+usage:
+
+console.log("strings".count("s")); //2
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// Manual input without functions  
+let string = 'development'            
+  
+let numLet = (string.match(/e/g).length);
+
+console.log(`Array match method: ${numLet}`)
+
+//5.
+const letterNum = string.split('e').length - 1
+console.log(`Array split method: ${letterNum}`)
+
+// 6. 
+const letterE = [...string].filter(letter => letter === 'e').length;
+console.log(`Array filter method: ${letterE}`);
+
+// 7. 
+const eLetter = [...string].reduce((total, letter) => letter === 'e' ? total + 1 : total, 0);
+
+console.log(eLetter);
+
+
+
+
+  let someE = string.split('');
+  let arr = []
+
+  someE.forEach(e => arr[e] ? arr[e]++ : arr[e] = 1)
+//  if(arr[e]) {
+//   arr[e]++
+//  }else {
+//   arr[e] = 1
+//  }
+// }) 
+
+console.log(arr)
+
+
+function countLetter(str) {
+  let lettere = str.split('');
+  let arr = [0]
+
+lettere.forEach(e => arr[e] = (arr[e] || 0) + 1) 
+  return arr;
+}
+
+console.log(countLetter(string))
