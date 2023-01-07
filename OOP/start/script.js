@@ -116,3 +116,25 @@
 // bmw.accelerate()
 // bmw.brake()
 // bmw.accelerate()
+
+
+
+
+// settlers and gettlers 
+const account = {
+    owner: 'alex',
+    movements: [200, 530, 120, 300],
+
+    get latest() {                  // gets the necessary data from object
+        return this.movements.slice(-1).pop()
+    },
+    
+    set latest(mov) {              // latest is just a name for func // // sets a new data in an object
+        this.movements.push(mov)
+    },
+
+}
+
+console.log(account.latest);
+account.latest = 50;
+console.log(account.movements)
