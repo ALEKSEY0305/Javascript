@@ -356,7 +356,7 @@
 
 // console.log(countLetter(string))
 
-const animal = ['fox', 'ant', 'bird', 'lion', 'wolf', 'deer', 'bear', 'frog', 'hen', 'mole', 'duck', 'goat', 'dog', 'cat', 'bat', 'rooster', 'cow'];
+// const animal = ['fox', 'ant', 'bird', 'lion', 'wolf', 'deer', 'bear', 'frog', 'hen', 'mole', 'duck', 'goat', 'dog', 'cat', 'bat', 'rooster', 'cow'];
 
 
 // const letter = [...animal].filter(l => l === 'goat')
@@ -441,4 +441,68 @@ const animal = ['fox', 'ant', 'bird', 'lion', 'wolf', 'deer', 'bear', 'frog', 'h
 
 
 
- 
+ const num = [2, 90, 5, 88, 90, 70 ]
+
+//  let max = Math.max.apply(Math, num)
+
+//  const index = (el) => el === max
+
+//  console.log(num.findIndex(index))
+
+
+//  const findBig = function(arr) {
+//   let max = arr[0];
+//   for(let i in arr){
+//     let array = arr[i] 
+//     if(array > max) max = array
+//   } return max
+//  }
+
+//  console.log(findBig([2,3,4,5]))
+
+
+ function findBig(arr) {
+    if (arr.length === 0) return -1;
+
+    let max = arr[0];
+    let maxIndex = 0;
+
+    for (let i in arr) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+    return maxIndex;
+}
+console.log(findBig([]))
+
+//  const arr = [2, 90, 5, 88, 90, 70 ]
+
+// const max1 = Math.max(...arr);
+
+// const index1 = arr.indexOf(max1);
+// console.log(index1);
+
+
+// const arr = [2, 90, 5, 88, 90, 70 ];
+
+// const index = arr.reduce((acc, cur, index) => cur > arr[acc] ? index : acc, 0);
+
+// console.log(index);
+
+// function StockPicker(arr) { 
+//   let lissf = arr[0]
+//   let profit = -1
+//   for(let i = 1; i < arr.length; i++) {
+//       if(arr[i] > lissf) {
+//           profit = Math.max(profit, arr[i] - lissf)
+//       } else {
+//           lissf = arr[i]
+//       }
+//   }
+//   return profit
+// }
+
+
+// console.log(StockPicker([2, 13, 1, 3, 10]))
